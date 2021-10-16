@@ -1,0 +1,520 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding-right: 5px;
+    text-align: center;
+}
+
+ul {
+    background-color: #22d6b5;
+    border-radius: 20px;
+    text-align: center;
+    width: 50px;
+    padding-left: 5px;
+    margin-right: 5px;
+}
+
+img {
+    width: 125px;
+    height: 85px;
+}
+
+.cabecalho {
+    background-color: #63e3ec;
+    width: 100%;
+    height: 40%;
+    float: left;
+    padding: 0 auto;
+}
+
+.logo {
+    float: left;
+    margin-top: 0 auto;
+}
+
+.navbar {
+    height: 50px;
+    background-color: black;
+    font-size: 125%;
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+}
+
+.menu {
+    color: #22d6b5;
+    height: 70px;
+}
+
+input {
+    width: 98%;
+    margin: 2px;
+}
+
+select {
+    width: 100%;
+}
+
+select[type="month"] {
+    margin-top: 10px;
+    width: 50%;
+    padding-top: 0px;
+}
+
+label[for="mes"] {
+    font-weight: bold;
+}
+
+input[type="month"] {
+    width: 20%;
+}
+
+input[type="submit"] {
+    border-radius: 10px;
+    height: 30px;
+    text-align: center;
+    background-color: #50f688;
+    font-weight: bold;
+}
+
+input[id="btn-submitLogin"] {
+    border-radius: 10px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    width: 150px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+/*
+#botão {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 520px;
+}*/
+
+form[id="botão"] {
+    float: left;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#register-form {
+    font-size: 18 px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10 px;
+    vertical-align: middle;
+}
+
+.cadastrar {
+    background-color: #50f688;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.cadastro {
+    background-color: #63e3ec;
+    height: 280px;
+    width: 502px;
+    float: right;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.login {
+    background-color: #63e3ec;
+    min-height: 40px;
+    max-height: 60px;
+    width: 500px;
+    float: right;
+    margin-top: 45px;
+    padding-top: 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.full-box {
+    margin: 10px;
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.full {
+    width: 25%;
+    margin-left: 180px;
+}
+
+.ful {
+    width: 25%;
+    margin-left: 20px;
+}
+
+.frase {
+    color: black;
+    font-size: 120px;
+    margin-top: 100px;
+    margin-left: 130px;
+    padding: 0 auto;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+/*tela login*/
+
+.fundoPretoLogin {
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20 px;
+}
+
+.fazerLogin {
+    background-color: #22d6b5;
+    height: 220px;
+    width: 500px;
+    float: left;
+    margin: 250px;
+    margin-left: 80px;
+    border-radius: 10px;
+}
+
+.login-center {
+    padding-top: 20px;
+}
+
+.receita-center {
+    padding-top: 30px;
+}
+
+.logar {
+    background-color: #D6A913;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.ola {
+    color: #22d6b5;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    top: 50%;
+    transform: translate(0%, 25%)
+}
+
+.clear {
+    clear: both;
+}
+
+.fundoPretoCadastro {
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin-top: 0;
+    margin: 40px;
+    padding-top: 0;
+}
+
+.fundoAzul {
+    background-color: #22d6b5;
+    color: black;
+    height: 110px;
+}
+
+/* botão sair*/
+
+.sair {
+    float: right;
+    text-align: center;
+}
+
+.mes {
+    margin-top: 70px;
+    background-color: #D6A913;
+    color: black;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10 px;
+}
+
+/*receita e despesa*/
+
+.receita_despesa {
+    width: 100%;
+    height: 50px;
+    color: black;
+    margin-left: 240px;
+}
+
+.receita_despes {
+    width: 100%;
+    height: 50px;
+    color: black;
+    margin-left: 130px;
+}
+
+.textoReceita {
+    font-size: 20px;
+}
+
+select {
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.register-form-receita {
+    font-size: 18 px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10 px;
+}
+
+.PretoReceita {
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: center;
+    margin: 40px;
+}
+
+.cadastrarReceita {
+    background-color: #22d6b5;
+    height: 350px;
+    width: 500px;
+    float: left;
+    margin: 240px;
+    margin-left: 450px;
+    border-radius: 10px;
+}
+
+.cadrastrarDespesa {
+    background-color: #22d6b5;
+    height: 320px;
+    width: 500px;
+    float: left;
+    margin: 70px;
+    margin-left: 450px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.cadrastrarReceita {
+    background-color: #22d6b5;
+    height: 270px;
+    width: 500px;
+    float: left;
+    margin: 70px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+.pesquiseDespesa {
+    background-color: #22d6b5;
+    height: 180px;
+    width: 500px;
+    float: left;
+    margin: 30px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+.centralizar {
+    transform: translate(0%, 25%);
+}
+
+.centro {
+    padding-top: 35px;
+    margin-left: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.centro-cadastro {
+    padding-top: 10px;
+}
+
+.espaco {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.espacopessoa {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.despesas {
+    background-color: #22d6b5;
+    min-width: 500px;
+    max-width: 800px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 120px;
+}
+
+.receitas {
+    background-color: #22d6b5;
+    min-width: 500px;
+    max-width: 700px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 450px;
+    min-height: 250px;
+    max-height: 500px;
+}
+
+.metas {
+    background-color: #22d6b5;
+    height: 250px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 450px;
+    text-align: center;
+}
+
+.cadrastrarMeta {
+    background-color: #22d6b5;
+    min-height: 250px;
+    max-height: 350px;
+    width: 500px;
+    float: left;
+    margin-top: 80px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+.receita {
+    background-color: #D6A913;
+    width: 100%;
+    height: 300px;
+    margin-left: 0px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.despesa {
+    background-color: #22d6b5;
+    width: 100%;
+    height: 180px;
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.balanco {
+    background-color: #22d6b5;
+    height: 320px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 450px;
+    text-align: center;
+    padding-top: 0px;
+}
+
+.centrobalanco {
+    padding-top: 20px;
+}
+
+.despesaCategorias {
+    background-color: #22d6b5;
+    color: black;
+    width: 100%;
+    height: 500px;
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.botão-sair {
+    float: right;
+    padding: 5px;
+    padding-right: 30px;
+    color: black;
+    text-align: center;
+}
+
+.pessoacadastrada {
+    background-color: #22d6b5;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 450px;
+    min-height: 250px;
+    max-height: 500px;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.msgForm {
+    text-align: center;
+}
+
+#donutchart {
+    float: right;
+}
+
+.grafico {
+    margin-top: 80px;
+    margin-right: 150px;
+}
+
+#copyright {
+    background-color: #63e3ec;
+    margin-top: 110px;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.graficomsg {
+    background-color: #D6A913;
+    width: 500px;
+    float: left;
+    margin-top: 110px;
+    margin-left: 450px;
+    text-align: center;
+    border-radius: 10px;
+}
