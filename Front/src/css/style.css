@@ -182,27 +182,27 @@ form[id="botão"] {
 /*tela login*/
 
 .fundoPretoLogin {
-    color: #22d6b5;
+    color: black;
     height: 110px;
     float: left;
     font-size: 300%;
     text-align: left;
-    margin-left: 30px;
+    margin-left: 80px;
     margin-top: 20 px;
 }
 
 .fazerLogin {
-    background-color: #22d6b5;
+    background-color: #63e3ec;
     height: 220px;
     width: 500px;
     float: left;
     margin: 250px;
-    margin-left: 80px;
+    margin-left: 180px;
     border-radius: 10px;
 }
 
 .login-center {
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .receita-center {
@@ -210,11 +210,11 @@ form[id="botão"] {
 }
 
 .logar {
-    background-color: #D6A913;
+    background-color: #50f688;
     color: black;
     text-align: center;
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 2px;
     font-size: 20px;
     border-radius: 10px;
 }
