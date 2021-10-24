@@ -84,12 +84,12 @@ input[type="submit"] {
 }
 
 input[id="btn-submitLogin"] {
-    border-radius: 10px;
-    height: 30px;
+    border-radius: 100px;
+    height: 70px;
     font-size: 15px;
     text-align: center;
-    width: 150px;
-    margin-right: 50px;
+    width: 70px;
+    margin-right: 80px;
     margin-top: 10px;
 }
 
@@ -102,10 +102,12 @@ input[id="btn-submitLogin"] {
 }*/
 
 form[id="botão"] {
-    float: left;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 130px;
     margin-bottom: 30px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 100px;
 }
 
 #register-form {
@@ -220,10 +222,10 @@ form[id="botão"] {
 }
 
 .ola {
-    color: #22d6b5;
+    color: #63e3ec;
     font-size: 40px;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 60px;
     position: relative;
     top: 50%;
     transform: translate(0%, 25%)
@@ -519,4 +521,9 @@ select {
     margin-left: 450px;
     text-align: center;
     border-radius: 10px;
+}
+
+.texto {
+    text-align: center;
+    word-spacing: 208px;
 }
