@@ -70,7 +70,7 @@
         </form>
         <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
             <div class="fullBox">
-                <h5>Paciente cadastrado com sucesso!</h5>
+                <h5>Consulta cadastrada com sucesso!</h5>
             </div>
         <?php } ?>
     </div>
