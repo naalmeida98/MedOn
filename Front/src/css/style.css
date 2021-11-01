@@ -169,6 +169,11 @@ form[id="botão"] {
     margin-left: 180px;
 }
 
+.fullCenter {
+    width: 25%;
+    margin-left: 298px;
+}
+
 .ful {
     width: 25%;
     margin-left: 20px;
@@ -331,11 +336,22 @@ select {
 
 .cadrastrarMedico {
     background-color: #63e3ec;
-    height: 480px;
+    height: 370px;
     width: 500px;
     float: left;
     margin: 70px;
     margin-left: 430px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.cadrastrarPaciente {
+    background-color: #63e3ec;
+    height: 580px;
+    width: 800px;
+    float: left;
+    margin: 70px;
+    margin-left: 300px;
     margin-bottom: 50px;
     border-radius: 10px;
 }
