@@ -157,6 +157,13 @@ form[id="botão"] {
     position: relative;
 }
 
+.fullBox {
+    margin: 10px;
+    flex: 1 1 100%;
+    position: relative;
+    text-align: center;
+}
+
 .full {
     width: 25%;
     margin-left: 180px;
@@ -322,13 +329,13 @@ select {
     border-radius: 10px;
 }
 
-.cadrastrarDespesa {
-    background-color: #22d6b5;
-    height: 320px;
+.cadrastrarMedico {
+    background-color: #63e3ec;
+    height: 480px;
     width: 500px;
     float: left;
     margin: 70px;
-    margin-left: 450px;
+    margin-left: 430px;
     margin-bottom: 50px;
     border-radius: 10px;
 }
@@ -526,4 +533,9 @@ select {
 .texto {
     text-align: center;
     word-spacing: 208px;
+}
+
+.cadastreTexto {
+    text-align: center;
+    padding-top: 50px;
 }
