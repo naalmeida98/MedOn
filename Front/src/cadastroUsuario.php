@@ -32,13 +32,20 @@ if (!isset($_SESSION)) {
         <p class="cadastrar">CADASTRE-SE</p>
 
         <div class="centro-cadastro">
-            <form id="register-form" action="controle_servico_usuario.php?acao=inserirUsuario" method="post" name="cadastro">
+            <form id="register-form" action="../Controllers/usuario.php?acao=logar" method="post" name="cadastro">
 
                 <div class="full-box">
-                    <label for="name" class="required"> Login</label>
-                    <input type="text" name="login" id="login" placeholder="Digite seu nome">
+                    <label for="name" class="required"> CRM</label>
+                    <input type="text" name="login" id="crm" placeholder="Digite seu CRM">
                 </div>
-
+                <div class="full-box">
+                    <label for="name" class="required">Nome completo</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo">
+                </div>
+                <div class="full-box">
+                    <label for="name" class="required">Data nascimento</label>
+                    <input type="text" name="data_nascimento" id="data_nascimento" placeholder="Digite sua data de nascimento">
+                </div>
                 <div class="full-box">
                     <label for="name" class="required">Senha</label>
                     <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
