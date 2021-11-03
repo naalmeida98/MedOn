@@ -13,7 +13,7 @@
         $usuario->__set('senha',$_POST['senha']);
             
         $conexao = new Conexao();
-        $servico_usuario = new UsuarioPersistence($conexao, $usuario);
+        $servico_usuario = new Serviços_usuario($conexao, $usuario);
         $servico_usuario->inserirUsuario();
         
         // if( $_POST['login'] == '' || $_POST['nome_familia'] == '' || $_POST['qtd_pessoas'] == ''
@@ -35,9 +35,14 @@
         // }
     }elseif($acao == 'inserir'){
         
-        // $usuario = new Usuario();
-        // $conexao = new Conexao();
-        // $servico_usuario = new Serviços_usuario($conexao, $usuario);
-        // $servico_usuario->erro();
+        $usuario = new Usuario();
+        $usuario->__set('crm',$_POST['crm']);
+        $usuario->__set('nome',$_POST['nome']);
+        $usuario->__set('data_nascimento',$_POST['data_nascimento']);
+        $usuario->__set('senha',$_POST['senha']);
+        
+        $conexao = new Conexao();
+        $servico_usuario = new Serviços_usuario($conexao, $usuario);
+        $servico_usuario->inserirUsuario();
     }
 ?>

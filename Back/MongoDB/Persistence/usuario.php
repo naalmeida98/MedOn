@@ -1,7 +1,7 @@
 
 <?php
 
-class UsuarioPersistence {
+class Serviços_usuario{
 
 	private $conexao;
 	private $crm;
@@ -10,7 +10,7 @@ class UsuarioPersistence {
 	private $senha;
 	
 	public function __construct(Conexao $conexao, Usuario $usuario) { 
-		$this->conexao = $conexao->conectar();
+		$this->conexao = $conexao->conectar("usuario");
 		$this->crm = $usuario->__get('crm');
 		$this->nome = $usuario->__get('nome');
 		$this->data_nascimento = $usuario->__get('data_nascimento');
@@ -18,6 +18,9 @@ class UsuarioPersistence {
 	}
 		
 	public function inserirUsuario(){
+		$this->conexao->insert(array(
+			'nome' => 'teste',
+		));
 		// try{
 		// 	$query = "select U.login from usuario U where '$this->login' = U.login;";
 		// 	$stmt = $this->conexao->prepare($query);

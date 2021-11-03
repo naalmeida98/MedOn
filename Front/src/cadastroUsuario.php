@@ -32,7 +32,7 @@ if (!isset($_SESSION)) {
         <p class="cadastrar">CADASTRE-SE</p>
 
         <div class="centro-cadastro">
-            <form id="register-form" action="../Controllers/usuario.php?acao=logar" method="post" name="cadastro">
+            <form id="register-form" action="../Controllers/usuario.php?acao=inserir" method="post" name="cadastro">
 
                 <div class="full-box">
                     <label for="name" class="required"> CRM</label>
