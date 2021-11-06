@@ -2,18 +2,18 @@
 
 use MongoDB\Client;
 
-require_once '../../vendor/autoload.php';
+require_once '../../../../MedOn/vendor/autoload.php';
 
 class Conexao{
     private $m;
     private $db;
 
-    public function conectar($atributo) {
+    public function conectar() {
         try {
             $m = new Client(
-                'mongodb+srv://vini:12345@localhost:27017'
+                'mongodb://admin:1234@localhost:27017'
             );   
-            $db = $m->MedOn->$atributo;
+            $db = $m->MedOn;
     
             return $db;
         } catch (\Throwable $th) {

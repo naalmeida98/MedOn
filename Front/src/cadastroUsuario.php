@@ -36,7 +36,7 @@ if (!isset($_SESSION)) {
 
                 <div class="full-box">
                     <label for="name" class="required"> CRM</label>
-                    <input type="text" name="login" id="crm" placeholder="Digite seu CRM">
+                    <input type="text" name="crm" id="crm" placeholder="Digite seu CRM">
                 </div>
                 <div class="full-box">
                     <label for="name" class="required">Nome completo</label>

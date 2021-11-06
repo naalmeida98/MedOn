@@ -1,6 +1,10 @@
 
 <?php
 
+use MongoDB\Client;
+
+require_once '../../../../MedOn/vendor/autoload.php';
+
 class Serviços_usuario{
 
 	private $conexao;
@@ -10,7 +14,7 @@ class Serviços_usuario{
 	private $senha;
 	
 	public function __construct(Conexao $conexao, Usuario $usuario) { 
-		$this->conexao = $conexao->conectar("usuario");
+		$this->conexao = $conexao->conectar();
 		$this->crm = $usuario->__get('crm');
 		$this->nome = $usuario->__get('nome');
 		$this->data_nascimento = $usuario->__get('data_nascimento');
@@ -18,9 +22,14 @@ class Serviços_usuario{
 	}
 		
 	public function inserirUsuario(){
-		$this->conexao->insert(array(
-			'nome' => 'teste',
-		));
+		$documents = [
+			"nome" => "teste",
+			"crm" => "1234"
+		];
+		
+		$collection = $this->conexao->usuario;
+		
+		$collection->insertMany($documents);
 		// try{
 		// 	$query = "select U.login from usuario U where '$this->login' = U.login;";
 		// 	$stmt = $this->conexao->prepare($query);
