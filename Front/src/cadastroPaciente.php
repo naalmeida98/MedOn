@@ -30,8 +30,8 @@
 
             </div>
             <div class="full-box">
-                <label for="name" class="required">CRM</label>
-                <input type="text" name="crm" id="crm" placeholder="Digite o CRM (apenas números)">
+                <label for="name" class="required">CPF</label>
+                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
             </div>
             <div class="full-box">
                 <label for="name" class="required">Data de nascimento</label>

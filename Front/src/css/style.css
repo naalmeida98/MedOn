@@ -169,6 +169,7 @@ form[id="botão"] {
     margin-left: 180px;
 }
 
+
 .fullCenter {
     width: 25%;
     margin-left: 298px;
@@ -383,13 +384,13 @@ select {
     border-radius: 10px;
 }
 
-.pesquiseDespesa {
-    background-color: #22d6b5;
+.pesquisePaciente {
+    background-color: #63e3ec;
     height: 180px;
-    width: 500px;
+    width: 800px;
     float: left;
     margin: 30px;
-    margin-left: 450px;
+    margin-left: 270px;
     margin-bottom: 0px;
     border-radius: 10px;
 }

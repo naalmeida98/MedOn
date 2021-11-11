@@ -12,7 +12,7 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 <html>
 
 <head>
-    <title>Poupe Mais</title>
+    <title>Med On</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css">
 </head>
