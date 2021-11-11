@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
 
 </head>
 
-<body>
+<body style="background-image: url(img/background.jpeg); background-repeat: no-repeat;  background-size:100%;">
 
     <header class="cabecalho">
         <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
@@ -93,7 +93,7 @@ if (!isset($_SESSION)) {
         </form>
     </div>
     <div class="clear"></div>
-    <div id="copyright"> Desenvolvido por Aline Dias, Helena Dias e  Natália Almeida</div>
+    <div id="copyright"> Desenvolvido por Aline Dias, Helena Dias e Natália Almeida</div>
     <script src="JS/scripts.js"></script>
 
 </body>

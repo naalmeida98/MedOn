@@ -15,9 +15,9 @@ if (!isset($_SESSION)) {
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="background-image: url(img/background2.jpeg); background-repeat: no-repeat;   background-size:100%;">
 
-    <header class="cabecalho">
+    <header class=" cabecalho">
         <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
     </header>
 
@@ -32,7 +32,7 @@ if (!isset($_SESSION)) {
         <div class="login-center">
             <form id="register-form" action="../Controllers/usuario.php?acao=logar" method="post" name="logar">
 
-                <div class="full-box" >
+                <div class="full-box">
                     <label class="required" for="name">Login</label>
                     <input type="text" name="login" id="login" placeholder="Digite seu login">
                 </div>
