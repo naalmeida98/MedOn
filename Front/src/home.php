@@ -56,8 +56,8 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
     </div>
     <div class="clear"></div>
     <div class="texto">
-        <h4>Consulta  Paciente  Pesquisar</h4>
-        
+        <h1>Consulta Paciente Pesquisar</h1>
+
     </div>
     <div class="clear"></div>
 

@@ -89,7 +89,7 @@ input[id="btn-submitLogin"] {
     font-size: 15px;
     text-align: center;
     width: 70px;
-    margin-right: 80px;
+    margin-right: 100px;
     margin-top: 10px;
 }
 
@@ -293,7 +293,7 @@ form[id="botão"] {
     width: 100%;
     height: 50px;
     color: black;
-    margin-left: 240px;
+    margin-left: 230px;
 }
 
 .receita_despes {
@@ -564,7 +564,7 @@ select {
 
 .texto {
     text-align: center;
-    word-spacing: 208px;
+    word-spacing: 150px;
 }
 
 .cadastreTexto {
