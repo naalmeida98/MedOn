@@ -5,6 +5,8 @@ use MongoDB\Client;
 
 require_once '../../../../MedOn/vendor/autoload.php';
 
+use MongoDB\BulkWriteResult;
+
 class Serviços_usuario{
 
 	private $conexao;
@@ -22,14 +24,15 @@ class Serviços_usuario{
 	}
 		
 	public function inserirUsuario(){
-		$documents = [
-			"nome" => "teste",
-			"crm" => "1234"
-		];
+		// $documents = (array('nome' => 'teste1',
+		// 					'crm' => 12345));
 		
-		$collection = $this->conexao->usuario;
+		// $collection = $this->conexao->selectDatabase('MedOn')->selectCollection('usuario');
 		
-		$collection->insertMany($documents);
+		// $id = $collection->insertOne(array('nome' => 'teste1',
+		// 								'crm' => '12345'));
+
+		// echo $id;
 		// try{
 		// 	$query = "select U.login from usuario U where '$this->login' = U.login;";
 		// 	$stmt = $this->conexao->prepare($query);

@@ -1,3 +1,127 @@
+RELEASE 1.0.4
+-------------
+2016-11-14  Jeremy Mikola  <jmikola@gmail.com>
+	* PHPLIB-228: ReadConcern default should only be set when supported by the server
+
+
+RELEASE 1.0.3
+-------------
+2016-09-22  Jeremy Mikola  <jmikola@gmail.com>
+	* Allow Travis to fast-finish
+
+2016-09-22  Jeremy Mikola  <jmikola@gmail.com>
+	* Revise Travis build matrix
+
+2016-09-22  Jeremy Mikola  <jmikola@gmail.com>
+	* PHPLIB-193: Do not pass typeMap Client option to Manager
+
+2016-09-22  Jeremy Mikola  <jmikola@gmail.com>
+	* PHPLIB-219: Fix BSON serialization of findAndModify write concern
+
+2016-06-20  Jeremy Mikola  <jmikola@gmail.com>
+	* Fix indentation
+
+2016-06-20  Jeremy Mikola  <jmikola@gmail.com>
+	* Fix DatabaseCommand::execute() return type hint
+
+2016-06-20  Jeremy Mikola  <jmikola@gmail.com>
+	* Fix doc block spacing
+
+2016-06-20  Jeremy Mikola  <jmikola@gmail.com>
+	* Remove unnecessary use statements
+
+2016-06-03  Jeremy Mikola  <jmikola@gmail.com>
+	* CreateIndexes::executeCommand() need not return anything
+
+2016-05-23  corpsee  <poisoncorpsee@gmail.com>
+	* Fixed return annotation in doc blocks
+
+2016-05-23  Jesper Wallin  <jesper@ifconfig.se>
+	* Fix typo in query projection example
+
+2016-06-02  Derick Rethans  <github@derickrethans.nl>
+	* Fixed documentation to point to the right BSON namespace for ObjectID
+
+2016-06-03  Jeremy Mikola  <jmikola@gmail.com>
+	* Note that non-arrays may also be used as documents
+
+2016-06-02  Jeremy Mikola  <jmikola@gmail.com>
+	* Add write method examples to CRUD tutorial
+
+2016-03-30  Jeremy Mikola  <jmikola@gmail.com>
+	* Add 1.0.2 release notes
+
+
+RELEASE 1.0.2
+-------------
+2016-03-30  Jeremy Mikola  <jmikola@gmail.com>
+	* Discuss how inserted IDs may be accessed in Upgrade Guide
+
+2016-03-30  Jeremy Mikola  <jmikola@gmail.com>
+	* Use reference-style links in Upgrade Guide
+
+2016-03-29  Nick Dresselhaus  <ndresselhaus@cirruspath.com>
+	* PHPLIB-189: Fix merging of comment and maxTimeMS options
+
+2016-03-29  Jeremy Mikola  <jmikola@gmail.com>
+	* Use listCollections for command cursor example, move aggregate to CRUD
+
+2016-03-28  Jeremy Mikola  <jmikola@gmail.com>
+	* Add query examples and create BSON tutorial page
+
+2016-03-28  Jeremy Mikola  <jmikola@gmail.com>
+	* Clarify that Persistable is supported in methods without "typeMap" option
+
+2016-03-24  Jeremy Mikola  <jmikola@gmail.com>
+	* Add Client API documentation
+
+2016-03-24  Jeremy Mikola  <jmikola@gmail.com>
+	* Fix typo in Client::__get() documentation
+
+2016-03-24  Jeremy Mikola  <jmikola@gmail.com>
+	* Split Database docs into API and tutorial
+
+2016-03-24  Jeremy Mikola  <jmikola@gmail.com>
+	* CreateCollection::execute() may return an array
+
+2016-03-23  Jeremy Mikola  <jmikola@gmail.com>
+	* Split Collection docs into API, tutorial, and upgrade guide
+
+2016-03-23  Jeremy Mikola  <jmikola@gmail.com>
+	* Specify when findAndModify operations may return null
+
+2016-03-23  Jeremy Mikola  <jmikola@gmail.com>
+	* Misc doc block updates for Collection operations
+
+2016-03-23  Jeremy Mikola  <jmikola@gmail.com>
+	* Document typeMap option for DropDatabase and DropIndexes
+
+2016-03-23  Jeremy Mikola  <jmikola@gmail.com>
+	* Specify classes for returnDocument option constants
+
+2016-03-23  Jeremy Mikola  <jmikola@gmail.com>
+	* FindOne::execute() may return an array
+
+2016-03-14  Jeremy Mikola  <jmikola@gmail.com>
+	* Remove branch alias for 1.0.x
+
+2016-03-04  Jeremy Mikola  <jmikola@gmail.com>
+	* Add 1.0.1 release notes
+
+RELEASE 1.0.1
+-------------
+2016-02-16  minenok  <minenok@tutu.ru>
+	* PHPLIB-180: Fix option merging for Find operation
+
+2016-01-30  Andreas Braun  <git@alcaeus.org>
+	* PHPLIB-179: Don't apply typeMap if useCursor is false
+
+2016-01-21  Jeremy Mikola  <jmikola@gmail.com>
+	* Update README install instructions for 1.0.0
+
+2016-01-21  Jeremy Mikola  <jmikola@gmail.com>
+	* Allow ext-mongodb 1.1.0
+
 RELEASE 1.0.0
 -------------
 2016-01-21  Jeremy Mikola  <jmikola@gmail.com>

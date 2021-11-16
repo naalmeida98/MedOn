@@ -5,10 +5,8 @@ namespace MongoDB;
 use MongoDB\Collection;
 use MongoDB\Driver\Cursor;
 use MongoDB\Driver\Manager;
-use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadConcern;
 use MongoDB\Driver\ReadPreference;
-use MongoDB\Driver\Server;
 use MongoDB\Driver\WriteConcern;
 use MongoDB\Exception\InvalidArgumentException;
 use MongoDB\Model\CollectionInfoIterator;
@@ -94,7 +92,7 @@ class Database
      * Return internal properties for debugging purposes.
      *
      * @see http://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.debuginfo
-     * @param array
+     * @return array
      */
     public function __debugInfo()
     {
@@ -128,7 +126,7 @@ class Database
     /**
      * Return the database name.
      *
-     * @param string
+     * @return string
      */
     public function __toString()
     {
@@ -166,7 +164,7 @@ class Database
      * @see CreateCollection::__construct() for supported options
      * @param string $collectionName
      * @param array  $options
-     * @return object Command result document
+     * @return array|object Command result document
      */
     public function createCollection($collectionName, array $options = [])
     {
