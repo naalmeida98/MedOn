@@ -1,25 +1,39 @@
 <?php
 
-class Conexao{
+require_once '../../../../MedOn/vendor/autoload.php';
 
-	private $host = 'localhost';
-	private $dbname = 'MedOn';
-	private $user = 'mongodb';
-	private $pass = '1234';
-
-	public function conectar() {
+class Conexao
+{
+	public function conectar()
+	{
 		try {
-			$conexao = new PDO(
-				"mongodb:host=$this->host;dbname=$this->dbname",
-				"$this->user",
-				"$this->pass"				
+
+			// $cluster = Cassandra::cluster()->withCredentials("cassandra", "cassandra")->withContactPoints('localhost')->withPort(9042)->build();
+			$cluster = Cassandra::cluster()->withCredentials("cassandra", "cassandra")->build();
+
+
+			$keyspace = 'medon';
+
+			// creating session with cassandra scope by keyspace
+			$session = $cluster->connect($keyspace);
+
+			// if (!$session) {
+			// 	echo "Error - Unable to connect to database";
+			// }
+
+			$statement = new Cassandra\SimpleStatement(       // also supports prepared and batch statements
+				'SELECT * FROM medon.usuario'
 			);
-			return $conexao;
-		} catch (PDOException $e) {
-			echo '<p>'.$e->getMessage().'</p>';
-			print("ERRO DE CONEXÃO");
+			$future    = $session->executeAsync($statement);  // fully asynchronous and easy parallel execution
+			$result    = $future->get();                      // wait for the result, with an optional timeout
+
+			echo $result;
+
+			// foreach ($result as $row) {                       // results and rows implement Iterator, Countable and ArrayAccess
+			// 	printf("The keyspace %s has a table called %s\n", $row['keyspace_name'], $row['columnfamily_name']);
+			// }
+		} catch (Exception $e) {
+			echo $e;
 		}
 	}
 }
-
-?>
