@@ -1,12 +1,24 @@
+
+
 <?php
 
-require_once '../../../../MedOn/vendor/autoload.php';
+require './lib/php-cassandra.php';
 
-class Conexao
+use Cassandra\Connection;
+
+class Cassandra
 {
+	public static function getConnection()	{
+		return  new Connection(['localhost'], 'MedOn');
+	}
+}
+//require_once '../../../../MedOn/vendor/autoload.php';
+
+//class Conexao
+//{
 	//public function conectar()
 	//{
-		try {
+		//try {
 
 			// $cluster = Cassandra::cluster()->withCredentials("cassandra", "cassandra")->withContactPoints('localhost')->withPort(9042)->build();
 			 
@@ -33,4 +45,4 @@ class Conexao
 		//	echo $e;
 		//}
 	//}
-}
+//}
