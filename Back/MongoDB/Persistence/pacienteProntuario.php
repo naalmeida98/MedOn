@@ -37,7 +37,7 @@ class Serviços_pacienteProntuario{
                             'crm_medico' => $_SESSION["crm_medico"]));                   
 		
 		$collectionPaciente = $this->conexao->selectCollection('paciente');
-		$qtd = $collectionPaciente->count(['cpf' => $this->crm]);
+		$qtd = $collectionPaciente->count(['cpf' => $this->cpf]);
 
 		if($qtd == 1){
 			header('Location: ../src/cadastroPaciente.php?pacienteexistente=1');
