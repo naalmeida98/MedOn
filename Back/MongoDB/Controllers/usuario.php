@@ -8,13 +8,11 @@
     if ($acao == 'logar'){
         $usuario = new Usuario();
         $usuario->__set('crm',$_POST['crm']);
-        $usuario->__set('nome',$_POST['nome']);
-        $usuario->__set('data_nascimento',$_POST['data_nascimento']);
         $usuario->__set('senha',$_POST['senha']);
             
         $conexao = new Conexao();
         $servico_usuario = new Serviços_usuario($conexao, $usuario);
-        $servico_usuario->inserirUsuario();
+        $servico_usuario->logar();
         
         
     }elseif($acao == 'inserir'){

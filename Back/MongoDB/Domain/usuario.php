@@ -1,5 +1,4 @@
 <?php
-
 class Usuario{
 	private $crm;
 	private $nome;

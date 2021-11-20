@@ -1,12 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-}
-$acao = 'calcularTotal';
-require_once 'controle_servico_despesa.php';
-require_once 'controle_servico_receita.php';
-
-$_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
+}?>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +22,7 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
     </header>
 
     <div class="ola">
-        <p>Bem-vindo Dr. <?php echo $_SESSION["nome_familia"]; ?></p>
+        <p>Bem-vindo Dr. <?php echo $_SESSION["nome_medico"]; ?></p>
     </div>
 
     <div class="receita_despesa">
@@ -37,17 +32,17 @@ $_SESSION["saldo"] = $receitas_totais - $despesas_totais; ?>
 				<input id="btn-submitLogin" type="submit" value="Pessoa">
 			</div>
 		</form> -->
-        <form id="botão" action="despesa.php" method="post" name="pagdespesa">
+        <form id="botão" action="../src/cadastroConsulta.php" method="post" name="cadConsulta">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
             </div>
         </form>
-        <form id="botão" action="metaCurtoPrazo.php" method="post" name="pagmetacurto">
+        <form id="botão" action="../src/cadastroPacienteProntuario.php" method="post" name="cadPaciente">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
             </div>
         </form>
-        <form id="botão" action="metaLongoPrazo.php" method="post" name="pagmetalongo">
+        <form id="botão" action="../src/pesquisa.php" method="post" name="pesquisa">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
             </div>

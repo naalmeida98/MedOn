@@ -33,8 +33,8 @@ if (!isset($_SESSION)) {
             <form id="register-form" action="../Controllers/usuario.php?acao=logar" method="post" name="logar">
 
                 <div class="full-box">
-                    <label class="required" for="name">Login</label>
-                    <input type="text" name="login" id="login" placeholder="Digite seu login">
+                    <label class="required" for="name">CRM</label>
+                    <input type="text" name="crm" id="login" placeholder="Digite seu login">
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Senha</label>
@@ -49,7 +49,7 @@ if (!isset($_SESSION)) {
                 <?php if (isset($_GET['loginnegado']) && $_GET['loginnegado'] == 1) { ?>
                     <div class="msgForm">
                         <h4>ATENÇÃO!!!</h4>
-                        <h5>Login ou senha incorretos! </h5>
+                        <h5>CRM ou senha incorretos! </h5>
                     </div>
                 <?php }
                 if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>

@@ -69,7 +69,7 @@ if (!isset($_SESSION)) {
             <?php }
             if (isset($_GET['usuarioexistente']) && $_GET['usuarioexistente'] == 1) { ?>
                 <div class="msgForm">
-                    <h5>Usuário já existente, escolha um outro login</h5>
+                    <h5>CRM já existente, escolha um outro login</h5>
                 </div>
             <?php }
             if (isset($_GET['senhaIncorreta']) && $_GET['senhaIncorreta'] == 1) { ?>
@@ -83,7 +83,7 @@ if (!isset($_SESSION)) {
                 </div>
             <?php }    ?>
         </div>
-        <form id="register-form" action="login.php" method="post" name="logar">
+        <form id="register-form" action="../src/index.php" method="post" name="logar">
             <div class="login">
                 Já tem cadastro?
                 <div class="full">
