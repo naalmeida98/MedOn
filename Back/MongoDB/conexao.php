@@ -17,19 +17,9 @@ class Conexao{
                 'mongodb://admin:1234@localhost:27017/?authSource=MedOn&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
             );
             
-            $db = $mongo->selectDatabase('MedOn')->selectCollection('teste');
+            $db = $mongo->selectDatabase('MedOn');
 
-            
-
-            $id = $db->insertOne(array('nome' => 'testenovoEMNOMEDEJESUS',
-										'crm' => '12345'));
-            
-            
-
-            
-            
-
-            return $mongo;
+            return $db;
         } catch (\Throwable $th) {
             echo "Database não foi conectado";
             echo $th;

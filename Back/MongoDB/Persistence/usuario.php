@@ -24,31 +24,26 @@ class Serviços_usuario{
 	}
 		
 	public function inserirUsuario(){
-		// $documents = (array('nome' => 'teste1',
-		// 					'crm' => 12345));
-		
-		// $collection = $this->conexao->selectDatabase('MedOn')->selectCollection('usuario');
-		
-		// $id = $collection->insertOne(array('nome' => 'teste1',
-		// 								'crm' => '12345'));
 
-		// echo $id;
-		// try{
-		// 	$query = "select U.login from usuario U where '$this->login' = U.login;";
-		// 	$stmt = $this->conexao->prepare($query);
-		// 	$stmt->execute();
-		// 	$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
+		$documents = (array('nome' => $this->nome,
+							'crm' => $this->crm,
+							'data_nascimento' => $this->data_nascimento,
+							'senha' => $this->senha));
+		
+		$collection = $this->conexao->selectCollection('usuario');
 
-		// 	if($cont == 1){
-		// 		header('Location: index.php?usuarioexistente=1');
-		// 	}else if($cont == 0){
-		// 		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
-		// 		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
-		// 		$this->conexao->exec($query);
-		// 		header('Location: login.php');}
-		// }catch(PDOException $e){
-		// 	header('Location: index.php?erro=1');
-		// }	
+		echo "chegou aqui";
+		
+		//não está funcionando
+		if($collection->find(['crm' => $this->crm])){
+			//fazer esse tratamento no FRONT
+			// header('Location: ../src/index.php?usuarioexistente=1');
+			echo "passou aqui";
+		}
+
+
+		$id = $collection->insertOne($documents);
+		//header('Location: ../src/login.php');	
 	}
 
 	// public function erro(){
