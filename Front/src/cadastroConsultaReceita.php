@@ -23,27 +23,27 @@
     <div class="cadrastrarConsulta">
 
         <p class="logar">Consulta</p>
-        <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
+        <form id="register-form" action="../Controllers/consultaReceita.php?acao=inserir" method="post" name="logar">
             <div class="full-box">
-                <label for="name" class="required">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF">
+                <label for="name" class="required">CPF do Paciente</label>
+                <input type="text" name="cpf_paciente" id="cpf" placeholder="Digite o CPF">
 
             </div>
 
             <div class="full-box">
-                <label for="name" class="required">Data</label>
+                <label for="name" class="required">Data da consulta</label>
                 <input type="date" name="data" id="data" placeholder="Digite a data ">
             </div>
 
             <div class="full-box">
                 <label for="name" class="required">Diagnóstico</label>
-                <textarea id="msg" placeholder="Digite o diagnótico"></textarea>
+                <textarea id="msg" name="diagnostico" placeholder="Digite o diagnótico"></textarea>
 
             </div>
 
             <div class="full-box">
                 <label for="name" class="required">Observação</label>
-                <textarea id="msg" placeholder="Digite a observação"></textarea>
+                <textarea id="msg" name='obs_consulta' placeholder="Digite a observação"></textarea>
 
 
             </div>
@@ -61,23 +61,28 @@
 
             <div class="full-box">
                 <label for="name" class="required">Tempo</label>
-                <input type="text" name="problemasSaude" id="problemasSaude" placeholder="Digite o tempo">
+                <input type="text" name="tempo" id="problemasSaude" placeholder="Digite os dias">
             </div>
 
             <div class="full-box">
                 <label for="name" class="required">Observação</label>
-                <textarea id="msg" placeholder="Digite a observação"></textarea>
+                <textarea id="msg" name='obs_receita' placeholder="Digite a observação"></textarea>
             </div>
 
             <div class="fullCente">
                 <input id="btn-submit" type="submit" value="Salvar">
             </div>
         </form>
-        <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
+        <?php if (isset($_GET['consultacadastrada']) && $_GET['consultacadastrada'] == 1) { ?>
             <div class="fullBox">
-                <h5>Paciente cadastrado com sucesso!</h5>
+                <h5>Consulta realizada com sucesso!</h5>
             </div>
-        <?php } ?>
+        <?php } 
+            if (isset($_GET['pacienteinexistente']) && $_GET['pacienteinexistente'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Paciente não foi cadastrado, gentileza cadastrar!</h5>
+                </div>
+            <?php }    ?>
     </div>
     <div class="clear"></div>
 

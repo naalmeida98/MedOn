@@ -2,13 +2,14 @@
 <?php
 
 use MongoDB\Client;
+use MongoDB\Driver\Cursor;
 
 require_once '../../../../MedOn/vendor/autoload.php';
 
 use MongoDB\BulkWriteResult;
 
 class Serviços_usuario{
-
+	
 	private $conexao;
 	private $crm;
 	private $nome;
@@ -24,59 +25,42 @@ class Serviços_usuario{
 	}
 		
 	public function inserirUsuario(){
-		// $documents = (array('nome' => 'teste1',
-		// 					'crm' => 12345));
-		
-		// $collection = $this->conexao->selectDatabase('MedOn')->selectCollection('usuario');
-		
-		// $id = $collection->insertOne(array('nome' => 'teste1',
-		// 								'crm' => '12345'));
 
-		// echo $id;
-		// try{
-		// 	$query = "select U.login from usuario U where '$this->login' = U.login;";
-		// 	$stmt = $this->conexao->prepare($query);
-		// 	$stmt->execute();
-		// 	$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
+		$documents = (array('nome' => $this->nome,
+							'crm' => $this->crm,
+							'data_nascimento' => $this->data_nascimento,
+							'senha' => $this->senha));
+		
+		$collection = $this->conexao->selectCollection('usuario');
+		$qtd = $collection->count(['crm' => $this->crm]);
 
-		// 	if($cont == 1){
-		// 		header('Location: index.php?usuarioexistente=1');
-		// 	}else if($cont == 0){
-		// 		$query = "insert into usuario (login,senha, nome_familia, qtd_pessoas)
-		// 		values ('$this->login', '$this->senha', '$this->nome_familia', $this->qtd_pessoas );";
-		// 		$this->conexao->exec($query);
-		// 		header('Location: login.php');}
-		// }catch(PDOException $e){
-		// 	header('Location: index.php?erro=1');
-		// }	
+		if($qtd == 1){
+			header('Location: ../src/cadastroUsuario.php?usuarioexistente=1');
+		}else{	
+			$id = $collection->insertOne($documents);
+			header('Location: ../src/index.php');
+		}
 	}
 
-	// public function erro(){
-	// 	header('Location: index.php?inputEmBranco=1');
-	// }
-
 	public function logar(){
-		// try{
-		// 	$query = "select U.login, U.nome_familia from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
-		// 	$stmt = $this->conexao->prepare($query);
-		// 	$stmt->execute();
-		// 	$cont = count($stmt->fetchAll(PDO::FETCH_NUM)); 
+		if(!isset($_SESSION)){
+			session_start();
+		};
 
-		// 	if($cont == 0){
-		// 		header('Location: login.php?loginnegado=1');
-		// 	}else if($cont == 1){
-		// 		$query = "select U.nome_familia from usuario U where '$this->login' = U.login and '$this->senha' = U.senha;";
-		// 		$stmt = $this->conexao->prepare($query);
-		// 		$stmt->execute();
-		// 		$aux = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		// 		if(!isset($_SESSION)){
-		// 			session_start();
-		// 		};
-		// 		$_SESSION["login"] = $this->login;
-		// 		$_SESSION["nome_familia"] = $aux[0]['nome_familia'];
-		// 		header('Location: pagprincipal.php');}
-		// }catch (PDOException $e){
-		// 	header('Location: login.php?erro=1');
-		// }
+		$collection = $this->conexao->selectCollection('usuario');
+		$qtd = $collection->count(['crm' => $this->crm]);
+
+		if($qtd == 1){
+			$usuario = $collection->findOne(['crm' => $this->crm]);
+			if($usuario['senha'] != $this->senha){
+				header('Location: ../src/index.php?loginnegado=1');
+			}else{
+				$_SESSION["nome_medico"] = $usuario['nome'];
+				$_SESSION["crm_medico"] = $usuario['crm'];
+				header('Location: ../src/home.php');
+			}	
+		}else{	
+			header('Location: ../src/index.php?loginnegado=1');
+		}		
 	}
 }?>

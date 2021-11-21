@@ -23,10 +23,10 @@
     <div class="cadrastrarPaciente">
 
         <p class="logar">Paciente</p>
-        <form id="register-form" action="controle_servico_pessoa.php?acao=inserirPessoa" method="post" name="logar">
+        <form id="register-form" action="../Controllers/pacienteProntuario.php?acao=inserir" method="post" name="logar">
             <div class="full-box">
                 <label for="name" class="required">Nome</label>
-                <input type="text" name="nome_pessoa" id="nome" placeholder="Digite o nome completo">
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome completo">
 
             </div>
             <div class="full-box">
@@ -35,32 +35,28 @@
             </div>
             <div class="full-box">
                 <label for="name" class="required">Data de nascimento</label>
-                <input type="date" name="dataNasc" id="dataNasc" placeholder="Digite a data de nascimento">
+                <input type="date" name="data_nascimento" id="data_nascimento" placeholder="Digite a data de nascimento">
             </div>
+
             <p class="logar">Prontuário</p>
             <div class="full-box">
                 <label for="name" class="required">Problemas de saúde</label>
-                <input type="text" name="problemasSaude" id="problemas saúde" placeholder="Digite seus problemas de saúde">
+                <input type="text" name="problemas" id="problemas saúde" placeholder="Digite os problemas de saúde">
             </div>
 
             <div class="full-box">
                 <label for="name" class="required">Medicação regular</label>
-                <input type="text" name="medicacao" id="medicacao" placeholder="Digite as medicações regulares">
-            </div>
-
-            <div class="full-box">
-                <label for="name" class="required">Problema de saúde</label>
-                <input type="text" name="problemasSaude" id="problemasSaude" placeholder="Digite seu problema de saúde">
+                <input type="text" name="medicacoes" id="medicacao" placeholder="Digite as medicações regulares">
             </div>
 
             <div class="full-box">
                 <label for="name" class="required">Alergias</label>
-                <input type="text" name="alergia" id="alergia" placeholder="Digite sua alegia">
+                <input type="text" name="alergias" id="alergia" placeholder="Digite sua alegia">
             </div>
 
             <div class="full-box">
                 <label for="name" class="required">Cirurgias</label>
-                <input type="text" name="cirurgia" id="cirurgia" placeholder="Digite sua cirurgia">
+                <input type="text" name="cirurgias" id="cirurgia" placeholder="Digite sua cirurgia">
             </div>
 
 
@@ -70,9 +66,15 @@
         </form>
         <?php if (isset($_GET['pessoacadastrada']) && $_GET['pessoacadastrada'] == 1) { ?>
             <div class="fullBox">
-                <h5>Consulta cadastrada com sucesso!</h5>
+                <h5>Paciente e prontuário cadastrados com sucesso!</h5>
             </div>
-        <?php } ?>
+        <?php } 
+            
+            if (isset($_GET['pacienteexistente']) && $_GET['pacienteexistente'] == 1) { ?>
+                <div class="msgForm">
+                    <h5>Paciente já foi cadastrado!</h5>
+                </div>
+            <?php }    ?>
     </div>
     <div class="clear"></div>
 
