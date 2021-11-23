@@ -23,32 +23,34 @@ class Conexao
 
 			$this->connection = Cassandra::getConnection();
 
-			try {
-				//CONSULTA
+			return $this->connection;
 
-				$result = $this->connection->querySync('SELECT * FROM "paciente"', [], null, ['names_for_values' => true]);
-				$employees = (array)$result->fetchAll();
-				print_r($employees);
-				//echo $employees;
+			// try {
+			//CONSULTA
 
-				// usort($employees, function ($a, $b) {
-				// 	return $a['name'] >= $b['name'];
-				// });
+			// $result = $this->connection->querySync('SELECT * FROM "paciente"', [], null, ['names_for_values' => true]);
+			// $employees = (array)$result->fetchAll();
+			// print_r($employees);
+			//echo $employees;
 
-				//INSERIR
-				// $cql = 'INSERT INTO "paciente" ("cpf", "datanasc", "nome") 
-				// VALUES (:cpf, :datanasc, :nome)';
+			// usort($employees, function ($a, $b) {
+			// 	return $a['name'] >= $b['name'];
+			// });
 
-				// $paciente = [
-				// 	'cpf' => '12457965321',
-				// 	'datanasc' => null,
-				// 	'nome' => 'Maria',
-				// ];
+			//INSERIR
+			// $cql = 'INSERT INTO "paciente" ("cpf", "datanasc", "nome") 
+			// VALUES (:cpf, :datanasc, :nome)';
 
-				// $this->connection->querySync($cql, $paciente, null, ['names_for_values' => true]);
-			} catch (Cassandra\Exception $e) {
-				echo $e;
-			}
+			// $paciente = [
+			// 	'cpf' => '12457965321',
+			// 	'datanasc' => null,
+			// 	'nome' => 'Maria',
+			// ];
+
+			// $this->connection->querySync($cql, $paciente, null, ['names_for_values' => true]);
+			// } catch (Cassandra\Exception $e) {
+			// 	echo $e;
+			// }
 
 			// $future    = $this->connection->executeAsync($statement);
 
