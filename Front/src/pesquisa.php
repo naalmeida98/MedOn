@@ -14,27 +14,26 @@
         <div class="botão-sair">
             <ul><a href="controle_servico_logout.php"> Sair </a></ul>
         </div>
-    </header>
+    </header> 
 
     <div class="pesquisePaciente">
 
         <p class="logar">Pesquise pelo Paciente</p>
         <div class="centralizar">
-
+        <form id="register-form" action="../Controllers/pesquisa.php?acao=pesquisar" method="post" name="pesquisar">
             <div class="full-box">
                 <label for="name" class="required">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF (apenas números)">
+                <input type="text" name="cpf_paciente" id="cpf" placeholder="Digite o CPF (apenas números)">
             </div>
+            
             <div class="fullCenter">
                 <input id="btn-submit" type="submit" value="Pesquisar">
             </div>
-        </div>
+        </form>
+        </div> 
 
     </div>
-    <div class="clear">
-    </div>
 
-    <div class="clear"></div>
 
 </body>
 
