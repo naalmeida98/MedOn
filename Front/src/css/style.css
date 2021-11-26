@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Festive&family=Lobster&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -131,11 +132,12 @@ form[id="botão"] {
 
 .cadastro {
     background-color: #63e3ec;
-    height: 300px;
+    height: 380px;
     width: 502px;
     float: right;
     margin: 50px;
     border-radius: 10px;
+    border: solid 1px #fff;
 }
 
 .login {
@@ -144,11 +146,12 @@ form[id="botão"] {
     max-height: 60px;
     width: 500px;
     float: right;
-    margin-top: 45px;
+    margin-top: 15px;
     padding-top: 5px;
     border-radius: 10px;
     text-align: center;
     font-size: 20px;
+    border: solid 1px #fff;
 }
 
 .full-box {
@@ -187,8 +190,8 @@ form[id="botão"] {
 
 .frase {
     color: black;
-    font-size: 120px;
-    margin-top: 100px;
+    font-size: 130px;
+    margin-top: 180px;
     margin-left: 130px;
     padding: 0 auto;
     font-family: Lobster;
@@ -547,7 +550,7 @@ select {
 
 #copyright {
     background-color: #63e3ec;
-    margin-top: 110px;
+    margin-top: 200px;
     text-align: center;
     font-size: 12px;
     padding: 10px;
