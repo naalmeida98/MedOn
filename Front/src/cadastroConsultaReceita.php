@@ -16,6 +16,32 @@
 
     <div class="clear"></div>
 
+    <div class="bot">
+        <form id="botão" action="home.php" method="post" name="pagprincipal">
+            <div class=fulBotao>
+                <input id="btn-submitLogi" type="submit" value="Home">
+            </div>
+        </form>
+
+        <form id="botão" action="cadastroConsultaReceita.php" method="post" name="cadastroReceita">
+            <div class=fulBotao>
+                <input id="btn-submitLogi" type="submit" value="Cadastro consulta">
+            </div>
+        </form>
+        <form id="botão" action="cadastroPacienteProntuario.php" method="post" name="cadastroPaciente">
+            <div class=fulBotao>
+                <input id="btn-submitLogi" type="submit" value="Cadastro Paciente/Prontuário">
+            </div>
+        </form>
+        <form id="botão" action="pesquisa.php" method="post" name="pesquisa">
+            <div class=fulBotao>
+                <input id="btn-submitLogi" type="submit" value="Pesquisa">
+            </div>
+        </form>
+
+
+    </div>
+    <div class="clear"></div>
     <div class="cadastreTexto">
         <h1> Cadastre uma consulta</h1>
     </div>
@@ -77,12 +103,12 @@
             <div class="fullBox">
                 <h5>Consulta realizada com sucesso!</h5>
             </div>
-        <?php } 
-            if (isset($_GET['pacienteinexistente']) && $_GET['pacienteinexistente'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Paciente não foi cadastrado, gentileza cadastrar!</h5>
-                </div>
-            <?php }    ?>
+        <?php }
+        if (isset($_GET['pacienteinexistente']) && $_GET['pacienteinexistente'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Paciente não foi cadastrado, gentileza cadastrar!</h5>
+            </div>
+        <?php }    ?>
     </div>
     <div class="clear"></div>
 

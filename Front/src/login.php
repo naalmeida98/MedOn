@@ -51,7 +51,11 @@ if (!isset($_SESSION)) {
                         <h4>ATENÇÃO!!!</h4>
                         <h5>CRM ou senha incorretos! </h5>
                     </div>
-                <?php }
+                
+                
+            </div>
+            <div style="background-color: #63e3ec; border-radius:10px; margin-top:10px;">
+                <?php 
                 if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
                     <div class="msgForm">
                         <h5>Erro ao logar, tente novamente!</h5>

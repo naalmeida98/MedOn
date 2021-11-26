@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-}?>
+} ?>
 
 <!DOCTYPE html>
 <html>
@@ -25,13 +25,9 @@ if (!isset($_SESSION)) {
         <p>Bem-vindo Dr. <?php echo $_SESSION["nome_medico"]; ?></p>
     </div>
 
+
     <div class="receita_despesa">
-        <!--
-		<form id="botão" action="pessoa.php" method="post" name="pagpessoa">
-			<div class="full">
-				<input id="btn-submitLogin" type="submit" value="Pessoa">
-			</div>
-		</form> -->
+
         <form id="botão" action="../src/cadastroConsultaReceita.php" method="post" name="cadConsulta">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
