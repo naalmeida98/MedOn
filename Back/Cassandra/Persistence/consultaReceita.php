@@ -46,7 +46,7 @@ class Serviços_consultaReceita
                 'data' => $this->data,
                 'diagnostico' => $this->diagnostico,
                 'obs_consulta' => $this->obs_consulta,
-                'crm_medico' => $_SESSION["crm_medico"]
+                'nome_medico' => $_SESSION["nome_medico"]
             ];
 
             $docReceita = [
@@ -58,8 +58,8 @@ class Serviços_consultaReceita
                 'obs_receita' => $this->obs_receita
             ];
 
-            $cqlConsulta = 'INSERT INTO "consulta" ("cpf_paciente", "data", "diagnostico", "obs_consulta", "crm_medico") 
-            VALUES (:cpf_paciente, :data, :diagnostico, :obs_consulta, :crm_medico)';
+            $cqlConsulta = 'INSERT INTO "consulta" ("cpf_paciente", "data", "diagnostico", "obs_consulta", "nome_medico") 
+            VALUES (:cpf_paciente, :data, :diagnostico, :obs_consulta, :nome_medico)';
             $cqlReceita = 'INSERT INTO "receita" ("cpf_paciente", "data", "remedio", "dosagem", "tempo", "obs_receita") 
             VALUES (:cpf_paciente, :data, :remedio, :dosagem, :tempo, :obs_receita)';
 

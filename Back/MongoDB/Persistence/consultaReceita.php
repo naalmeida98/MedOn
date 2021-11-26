@@ -44,7 +44,7 @@ class Serviços_consultaReceita{
 							'data' => $this->data,
 							'diagnostico' => $this->diagnostico,
                             'obs_consulta' => $this->obs_consulta,
-                            'crm_medico' => $_SESSION["crm_medico"]));                   
+                            'nome_medico' => $_SESSION["nome_medico"]));                   
 		
             $collectionConsulta = $this->conexao->selectCollection('consulta');		
             $id_consulta = $collectionConsulta->insertOne($docConsulta);

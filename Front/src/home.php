@@ -22,7 +22,7 @@ if (!isset($_SESSION)) {
     </header>
 
     <div class="ola">
-        <p>Bem-vindo Dr. <?php echo $_SESSION["nome_medico"]; ?></p>
+        <p>Bem-vindo Dr/a. <?php echo $_SESSION["nome_medico"]; ?></p>
     </div>
 
 

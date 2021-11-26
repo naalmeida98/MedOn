@@ -5,8 +5,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     require_once '../Controllers/pesquisa.php';
     if($doc != -1){
         $doc_completo = $doc_completo = isset($doc) ? $doc : $doc;
-        print_r($doc_completo);
-        
+        print_r($doc_completo);     
     }   
 }
 
@@ -82,15 +81,16 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
         <div class="centralizar">
 
             <div class="espaco">
-                <?php if($doc != -1){ ?>
-                    <span>Nome completo: <?php echo $doc_completo[0]['nome'] ?> <br></span>
-                    <span>CPF: <?php echo $doc_completo[0]['cpf'] ?> <br></span>
-                    <span>Data de nascimento:  <?php echo $doc_completo[0]['data_nascimento'] ?> <br></span>
-                    <span>Problemas de saúde: <?php echo $doc_completo[1]['problemas'] ?> <br></span>
-                    <span>Medicação regular: <?php echo $doc_completo[1]['medicacoes'] ?> <br> </span>
-                    <span>Alergias: <?php echo $doc_completo[1]['alergias'] ?> <br> </span>
-                    <span> Cirurgias: <?php echo $doc_completo[1]['cirurgias'] ?> <br> </span>
-                <?php } ?>
+                <?php if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
+                        if($doc != -1){ ?>
+                            <span>Nome completo: <?php echo $doc_completo[0]['nome'] ?> <br></span>
+                            <span>CPF: <?php echo $doc_completo[0]['cpf'] ?> <br></span>
+                            <span>Data de nascimento:  <?php echo $doc_completo[0]['data_nascimento'] ?> <br></span>
+                            <span>Problemas de saúde: <?php echo $doc_completo[1]['problemas'] ?> <br></span>
+                            <span>Medicação regular: <?php echo $doc_completo[1]['medicacoes'] ?> <br> </span>
+                            <span>Alergias: <?php echo $doc_completo[1]['alergias'] ?> <br> </span>
+                            <span> Cirurgias: <?php echo $doc_completo[1]['cirurgias'] ?> <br> </span>
+                <?php } }?>
             </div>
         </div>
 
@@ -104,24 +104,26 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
         <div class="centralizar">
 
             <div class="espaco">
-                <?php 
-                    if ($doc != -1){
-                        $i = isset($i) ? 0 : 0;
-                        for($i=0;$i<$doc_completo[4];$i++){ ?>
-                            <h1> Consulta <?php echo ($i+1) ?></h1>
-                            <span>Data: <?php echo $doc_completo[2][$i]['data'] ?> <br></span>
-                            <span>Diagnóstico: <?php echo $doc_completo[2][$i]['diagnostico'] ?> <br></span>
-                            <span>Observação da consulta: <?php echo $doc_completo[2][$i]['obs_consulta'] ?> <br></span>
+                <?php
+                    if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
+                        if ($doc != -1){
+                            $i = isset($i) ? 0 : 0;
+                            for($i=0;$i<$doc_completo[4];$i++){ ?>
+                                <h1> Consulta <?php echo ($i+1) ?></h1>
+                                <span>Médico: <?php echo $doc_completo[2][$i]['nome_medico'] ?> <br></span>
+                                <span>Data: <?php echo $doc_completo[2][$i]['data'] ?> <br></span>
+                                <span>Diagnóstico: <?php echo $doc_completo[2][$i]['diagnostico'] ?> <br></span>
+                                <span>Observação da consulta: <?php echo $doc_completo[2][$i]['obs_consulta'] ?> <br></span>
 
-                            <span>Medicação:<br> <?php echo $doc_completo[3][$i]['remedio'] ?> </span>
-                            <span>Dosagem: <?php echo $doc_completo[3][$i]['dosagem'] ?> <br></span>
-                            <span>Tempo: <?php echo $doc_completo[3][$i]['tempo'] ?> <br></span>
-                            <span>Observação da Medicação: <?php echo $doc_completo[3][$i]['obs_receita'] ?> <br></span>
+                                <span>Medicação:<br> <?php echo $doc_completo[3][$i]['remedio'] ?> </span>
+                                <span>Dosagem: <?php echo $doc_completo[3][$i]['dosagem'] ?> <br></span>
+                                <span>Tempo: <?php echo $doc_completo[3][$i]['tempo'] ?> <br></span>
+                                <span>Observação da Medicação: <?php echo $doc_completo[3][$i]['obs_receita'] ?> <br></span>
 
-                            <br><hr>
+                                <br><hr>
                     <?php } } if($doc == -1){
                     echo "CPF inválido";
-                }?>
+                } }?>
             </div>
 
         </div>
