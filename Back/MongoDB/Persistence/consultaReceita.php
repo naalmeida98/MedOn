@@ -47,9 +47,11 @@ class Serviços_consultaReceita{
                             'crm_medico' => $_SESSION["crm_medico"]));                   
 		
             $collectionConsulta = $this->conexao->selectCollection('consulta');		
-        
+            $id_consulta = $collectionConsulta->insertOne($docConsulta);
+            $id_consulta = (string) $id_consulta->getInsertedId();
+
             $docReceita = (array(
-                            'cpf_paciente' => $this->cpf_paciente,
+                            'id_consulta' => $id_consulta,
                             'data' => $this->data,
                             'remedio' => $this->remedio,
                             'dosagem' => $this->dosagem,
@@ -57,8 +59,8 @@ class Serviços_consultaReceita{
                             'obs_receita' => $this->obs_receita));
             
             $collectionReceita = $this->conexao->selectCollection('receita');
-            $id = $collectionConsulta->insertOne($docConsulta);
-            $id2 = $collectionReceita->insertOne($docReceita);
+            $id_receita = $collectionReceita->insertOne($docReceita);
+
             header('Location: ../src/cadastroConsultaReceita.php?consultacadastrada=1');
         }else{
             header('Location: ../src/cadastroConsultaReceita.php?pacienteinexistente=1');
