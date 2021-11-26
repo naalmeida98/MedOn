@@ -17,6 +17,7 @@ class Serviços_pesquisa{
 	private $medicacoes;
 	private $alergias;
 	private $cirurgias;
+
 	
 	public function __construct(Conexao $conexao, Paciente $paciente) { 
 		$this->conexao = $conexao->conectar();
@@ -32,12 +33,10 @@ class Serviços_pesquisa{
 		
 		$collectionPaciente = $this->conexao->selectCollection('paciente');
         
-
 		$qtd = $collectionPaciente->count(['cpf' => $this->cpf]);
 
 		if($qtd == 0){
-            //FAZER ESSE TRATAMENTO NO FRONT
-			header('Location: ../src/cadastroPaciente.php?pacienteinexistente=1');
+			return -1;
 		}else{
             if (!isset($_SESSION)) {
                 session_start();
@@ -45,51 +44,36 @@ class Serviços_pesquisa{
 
             $collectionProntuario = $this->conexao->selectCollection('prontuario');
             $collectionConsulta = $this->conexao->selectCollection('consulta');
-            $collectionReceita = $this->conexao->selectCollection('remedio');
+            $collectionReceita = $this->conexao->selectCollection('receita');
 
             $docPaciente = $collectionPaciente->findOne(['cpf' => $this->cpf]);
-            $docProntuario = $collectionProntuario->find(['cpf_paciente' => $this->cpf]);
-            $docConsulta = $collectionConsulta->find(['cpf_paciente' => $this->cpf]);
+            $docProntuario = $collectionProntuario->findOne(['cpf_paciente' => $this->cpf]);
 
-            print_r($docConsulta);
-            // print_r($docPaciente);
-            // print_r($docProntuario);
+			// print_r($docPaciente);
+			// print_r($docProntuario);
 
-            for($i=0; $i<$collectionReceita->count(); $i++){
-                $docReceita[$i] = $collectionReceita->findOne(['id_consulta' => $docConsulta[$i]['_id']]);
-                print_r($docReceita[$i]);
+			$qtd = $collectionConsulta->count(['cpf_paciente' => $this->cpf]);
+
+            for($i=0; $i<$qtd; $i++){
+				$docConsulta[$i] = $collectionConsulta->findOne(['cpf_paciente' => $this->cpf]);
+				//print_r($docConsulta[$i]);
+				$id_consulta = (string)$docConsulta[$i]['_id']->__toString();
+				// echo $id_consulta;
+                $docReceita[$i] = $collectionReceita->findOne(['id_consulta' => $id_consulta]);
+				//print_r($docReceita[$i]);
             }
-
-            
-
-            
-
-            
-
-            
 			
-			// header('Location: ../src/cadastroPacienteProntuario.php?pessoacadastrada=1');
+			$doc[0] = $docPaciente;
+			$doc[1] = $docProntuario;
+			$doc[2] = $docConsulta;
+			$doc[3] = $docReceita;
+			$doc[4] = $qtd; //quantidade de consultas registradas
+
+			// echo "passou aqui 1";
+
+			//print_r($doc);
+			return $doc;		
 		}
 	}
 
-	public function logar(){
-		if(!isset($_SESSION)){
-			session_start();
-		};
-
-		$collection = $this->conexao->selectCollection('paciente');
-		$qtd = $collection->count(['crm' => $this->crm]);
-
-		if($qtd == 1){
-			$paciente = $collection->findOne(['crm' => $this->crm]);
-			if($paciente['senha'] != $this->senha){
-				header('Location: ../src/index.php?loginnegado=1');
-			}else{
-				$_SESSION["nome_médico"] = $paciente['nome'];
-				header('Location: ../src/home.php');
-			}	
-		}else{	
-			header('Location: ../src/index.php?loginnegado=1');
-		}		
-	}
 }?>

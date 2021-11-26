@@ -13,23 +13,19 @@
     if ($acao == 'pesquisar'){
         $paciente = new Paciente();
         $paciente->__set('cpf',$_POST['cpf_paciente']);
-        // $consulta->__set('diagnostico',$_POST['diagnostico']);
-        // $consulta->__set('obs_consulta',$_POST['obs_consulta']);
-        // $receita = new Receita();
-        // $receita->__set('remedio',$_POST['remedio']);
-        // $receita->__set('dosagem',$_POST['dosagem']);
-        // $receita->__set('tempo',$_POST['tempo']);
-        // $receita->__set('obs_receita',$_POST['obs_receita']);
-
-        
+        $validar = false;
+        $vazio = false;
         
         $conexao = new Conexao();
         $servico_pesquisa = new Serviços_pesquisa($conexao,$paciente);
-        $servico_pesquisa->pesquisar();
-        
-        
-    }elseif($acao == ''){
-        
-        
+        $doc = $servico_pesquisa->pesquisar();
+
+
+        // if($doc == -1){
+        //     $vazio = true;
+        // }else{
+        //     $validar = true;
+        // } 
+              
     }
 ?>
