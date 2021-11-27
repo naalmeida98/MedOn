@@ -2,7 +2,6 @@
 
 class Receita
 {
-    private $cpf_paciente;
     private $data;
     private $remedio;
     private $dosagem;

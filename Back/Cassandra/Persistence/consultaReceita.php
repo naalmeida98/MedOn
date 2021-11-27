@@ -3,6 +3,7 @@
 
 require_once '../../../../MedOn/Back/Cassandra/cassandra.php';
 require_once '../../../../MedOn/Back/Cassandra/conexao.php';
+// require_once '../../../../MedOn/Back/Cassandra/gerar_uuid.php';
 require_once '../../../../MedOn/lib/php-cassandra.php';
 
 
@@ -41,16 +42,23 @@ class Serviços_consultaReceita
         $qtd = count((array)$collectionPaciente->fetchAll());
 
         if ($qtd == 1) {
+
+            $collectionConsulta = $this->conexao->querySync('SELECT * FROM "consulta" ', [], null, ['names_for_values' => true]);
+            $qtd = count((array)$collectionConsulta->fetchAll());
+
+            $id_consulta = $qtd + 1;
+
             $docConsulta = [
                 'cpf_paciente' => $this->cpf_paciente,
                 'data' => $this->data,
                 'diagnostico' => $this->diagnostico,
                 'obs_consulta' => $this->obs_consulta,
-                'nome_medico' => $_SESSION["nome_medico"]
+                'nome_medico' => $_SESSION["nome_medico"],
+                'id_consulta' => $id_consulta
             ];
 
             $docReceita = [
-                'cpf_paciente' => $this->cpf_paciente,
+                'id_consulta' => $id_consulta,
                 'data' => $this->data,
                 'remedio' => $this->remedio,
                 'dosagem' => $this->dosagem,
@@ -58,10 +66,10 @@ class Serviços_consultaReceita
                 'obs_receita' => $this->obs_receita
             ];
 
-            $cqlConsulta = 'INSERT INTO "consulta" ("cpf_paciente", "data", "diagnostico", "obs_consulta", "nome_medico") 
-            VALUES (:cpf_paciente, :data, :diagnostico, :obs_consulta, :nome_medico)';
-            $cqlReceita = 'INSERT INTO "receita" ("cpf_paciente", "data", "remedio", "dosagem", "tempo", "obs_receita") 
-            VALUES (:cpf_paciente, :data, :remedio, :dosagem, :tempo, :obs_receita)';
+            $cqlConsulta = 'INSERT INTO "consulta" ("cpf_paciente", "data", "diagnostico", "obs_consulta", "nome_medico", "id_consulta") 
+            VALUES (:cpf_paciente, :data, :diagnostico, :obs_consulta, :nome_medico, :id_consulta)';
+            $cqlReceita = 'INSERT INTO "receita" ("id_consulta", "data", "remedio", "dosagem", "tempo", "obs_receita") 
+            VALUES (:id_consulta, :data, :remedio, :dosagem, :tempo, :obs_receita)';
 
             $this->conexao->querySync($cqlConsulta, $docConsulta, null, ['names_for_values' => true]);
             $this->conexao->querySync($cqlReceita, $docReceita, null, ['names_for_values' => true]);
