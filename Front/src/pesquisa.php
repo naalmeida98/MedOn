@@ -23,7 +23,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
 <body>
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
+        <a class="logo" href="cadastroUsuario.php"> <img src="img/logo.jpeg"> </a>
         <div class="botão-sair">
             <ul><a href="controle_servico_logout.php"> Sair </a></ul>
         </div>
@@ -75,7 +75,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     </div>
 
 
-    <div class="pesquisePaciente">
+    <div class="pesquisePacient">
 
         <p class="logar">Prontuário</p>
         <div class="centralizar">
@@ -84,6 +84,9 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
                 <?php if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
                     if ($doc != -1) { ?>
                         <span>Nome completo: <?php echo $doc_completo[0]['nome'] ?> <br></span>
+                        <div style="float:left; margin-top:-54px; margin-left:600px; padding-top:20px;  ">
+                            <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
+                        </div>
                         <span>CPF: <?php echo $doc_completo[0]['cpf'] ?> <br></span>
                         <span>Data de nascimento: <?php echo $doc_completo[0]['data_nascimento'] ?> <br></span>
                         <span>Problemas de saúde: <?php echo $doc_completo[1]['problemas'] ?> <br></span>
@@ -97,9 +100,8 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
 
     </div>
 
-    <div class="clear">
-    </div>
-    <div class="pesquisePaciente">
+    <div class="clear"> </div>
+    <div class="pesquisePacient">
 
         <p class="logar">Últimas consultas</p>
         <div class="centralizar">
@@ -110,7 +112,10 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
                     if ($doc != -1) {
                         $i = isset($i) ? 0 : 0;
                         for ($i = 0; $i < $doc_completo[4]; $i++) { ?>
-                            <h1> Consulta <?php echo ($i + 1) ?></h1>
+                            <span Style="text-align:center; font-size:25px; font-weight:bold;"> Consulta <?php echo ($i + 1) ?> <br></span>
+                            <div style="float:left; margin-top:-55px; margin-left:300px; padding-top:20px;  ">
+                                <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
+                            </div>
                             <span>Médico: <?php echo $doc_completo[2][$i]['nome_medico'] ?> <br></span>
                             <span>Data: <?php echo $doc_completo[2][$i]['data'] ?> <br></span>
                             <span>Diagnóstico: <?php echo $doc_completo[2][$i]['diagnostico'] ?> <br></span>
@@ -120,9 +125,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
                             <span>Dosagem: <?php echo $doc_completo[3][$i]['dosagem'] ?> <br></span>
                             <span>Tempo: <?php echo $doc_completo[3][$i]['tempo'] ?> <br></span>
                             <span>Observação da Medicação: <?php echo $doc_completo[3][$i]['obs_receita'] ?> <br></span>
-
-                            <br>
-                            <hr>
+                            <hr Style="margin-right:30px;">
                 <?php }
                     }
                     if ($doc == -1) {
@@ -137,6 +140,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
 
 
 
+    <div class="clear"> </div>
 
 
 </body>

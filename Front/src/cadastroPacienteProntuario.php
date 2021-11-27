@@ -11,7 +11,7 @@
 
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
+        <a class="logo" href="cadastroUsuario.php"> <img src="img/logo.jpeg"> </a>
     </header>
 
     <div class="clear"></div>
@@ -95,13 +95,13 @@
             <div class="fullBox">
                 <h5>Paciente e prontuário cadastrados com sucesso!</h5>
             </div>
-        <?php } 
-            
-            if (isset($_GET['pacienteexistente']) && $_GET['pacienteexistente'] == 1) { ?>
-                <div class="msgForm">
-                    <h5>Paciente já foi cadastrado!</h5>
-                </div>
-            <?php }    ?>
+        <?php }
+
+        if (isset($_GET['pacienteexistente']) && $_GET['pacienteexistente'] == 1) { ?>
+            <div class="msgForm">
+                <h5>Paciente já foi cadastrado!</h5>
+            </div>
+        <?php }    ?>
     </div>
     <div class="clear"></div>
 

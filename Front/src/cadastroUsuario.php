@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
 <body style="background-image: url(img/background.jpeg); background-repeat: no-repeat;  background-size:100%;">
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
+        <a class="logo" href="cadastroUsuario.php"> <img src="img/logo.jpeg"> </a>
     </header>
 
     <div class="fundoPretoCadastro">

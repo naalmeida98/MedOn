@@ -11,7 +11,7 @@
 
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
+        <a class="logo" href="cadastroUsuario.php"> <img src="img/logo.jpeg"> </a>
     </header>
 
     <div class="clear"></div>

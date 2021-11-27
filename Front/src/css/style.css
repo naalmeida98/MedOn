@@ -27,12 +27,15 @@ img {
     height: 85px;
 }
 
+
+
 .cabecalho {
     background-color: #63e3ec;
     width: 100%;
     height: 40%;
     float: left;
     padding: 0 auto;
+
 }
 
 .logo {
@@ -156,7 +159,7 @@ form[id="botão"] {
     max-height: 60px;
     width: 500px;
     float: right;
-    margin-top: 15px;
+    margin-top: 25px;
     padding-top: 5px;
     border-radius: 10px;
     text-align: center;
@@ -421,6 +424,22 @@ select {
     margin-left: 270px;
     margin-bottom: 0px;
     border-radius: 10px;
+    font-size: 16px;
+}
+
+.pesquisePacient {
+    background-color: #63e3ec;
+    min-height: 400px;
+    max-height: 1200px;
+    width: 800px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 270px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+
 }
 
 .centralizar {
@@ -441,7 +460,7 @@ select {
 
 .espaco {
     padding-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 30px;
 }
 

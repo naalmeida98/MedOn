@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
 <body>
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
+        <a class="logo" href="cadastroUsuario.php"> <img src="img/logo.jpeg"> </a>
         <div class="botão-sair">
             <ul><a href="controle_servico_logout.php"> Sair </a></ul>
         </div>
