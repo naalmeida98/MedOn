@@ -68,15 +68,19 @@ class Serviços_pesquisa
                 // echo "\n<br />\n<br />ID consulta: ";
                 // print_r($id_consulta);
                 $collectionReceita = $this->conexao->querySync('SELECT * FROM "receita" WHERE "id_consulta" = :id_consulta ', ['id_consulta' => $id_consulta], null, ['names_for_values' => true]);
-                $docReceita[$i] = (array)$collectionReceita->fetchAll();
+                $receita = (array)$collectionReceita->fetchAll();
+                $docReceita[$i] = $receita[0];
                 // echo "\n<br />\n<br />Receita: ";
                 // print_r($docReceita[$i]);
             }
 
+            // echo "\n<br />\n<br />Doc Receita: ";
+            // print_r($docReceita);
+
             $doc[0] = $docPaciente[0];
             $doc[1] = $docProntuario[0];
             $doc[2] = $docConsulta;
-            $doc[3] = $docReceita[0];
+            $doc[3] = $docReceita;
             $doc[4] = $qtd; //quantidade de consultas registradas
 
             // echo "passou aqui 1";

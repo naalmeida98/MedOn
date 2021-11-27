@@ -58,7 +58,7 @@ class Serviços_usuario
         $usuario = (array)$collection->fetchAll();
         $qtd = count($usuario);
 
-        print_r($usuario);
+        // print_r($usuario);
 
         if ($qtd == 1) {
             if ($usuario[0]['senha'] != $this->senha) {
