@@ -4,8 +4,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     $acao = 'pesquisar';
     require_once '../Controllers/pesquisa.php';
     if ($doc != -1) {
-        $doc_completo = $doc_completo = isset($doc) ? $doc : $doc;
-        // print_r($doc_completo);     
+        $doc_completo = $doc_completo = isset($doc) ? $doc : $doc; 
     }
 }
 
@@ -23,9 +22,9 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
 <body>
 
     <header class="cabecalho">
-        <a class="logo" href="index.php"> <img src="img/logo.jpeg"> </a>
+        <a class="logo" href="home.php"> <img src="img/logo.jpeg"> </a>
         <div class="botão-sair">
-            <ul><a href="controle_servico_logout.php"> Sair </a></ul>
+            <ul><a href="../Controllers/logout.php"> Sair </a></ul>
         </div>
     </header>
 
