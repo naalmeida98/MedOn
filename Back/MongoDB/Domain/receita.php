@@ -5,6 +5,7 @@ class Receita{
 	private $dosagem;
     private $tempo;
     private $obs_receita;
+	private $id_receita;
 
 
 	public function __get($atributo) {

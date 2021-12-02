@@ -5,6 +5,7 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     require_once '../Controllers/pesquisa.php';
     if ($doc != -1) {
         $doc_completo = $doc_completo = isset($doc) ? $doc : $doc; 
+        print_r($doc_completo);
     }
 }
 
@@ -17,6 +18,12 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     <title>Med On - Pesquisar</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        function acao(id_receita, id_consulta) {
+            location.href = '../Controllers/consultaReceita.php?acao=excluirConsultaReceita&id_consulta='+id_consulta+'&id_receita='+id_receita;
+        }
+    </script>
 </head>
 
 <body>

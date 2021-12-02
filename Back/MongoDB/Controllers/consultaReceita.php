@@ -23,8 +23,14 @@
         $servico_consultaReceita->inserirConsultaReceita();
         
         
-    }elseif($acao == ''){
+    }elseif($acao == 'excluirConsultaReceita'){
+        $consulta = new Consulta();
+        $consulta->__set('id_consulta', $GET('id_consulta'));
+        $receita = new Receita();
+        $consulta->__set('id_receita', $GET('id_receita'));
         
-        
+        $conexao = new Conexao();
+        $servico_consultaReceita = new Serviços_consultaReceita($conexao, $consulta, $receita);
+        $servico_consultaReceita->excluirConsultaReceita();
     }
 ?>
