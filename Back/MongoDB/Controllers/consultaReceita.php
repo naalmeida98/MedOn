@@ -25,12 +25,21 @@
         
     }elseif($acao == 'excluirConsultaReceita'){
         $consulta = new Consulta();
-        $consulta->__set('id_consulta', $GET('id_consulta'));
+        $consulta->__set('data',"");
+        $consulta->__set('cpf_paciente',"");
+        $consulta->__set('diagnostico',"");
+        $consulta->__set('obs_consulta',"");
+        $consulta->__set('id_consulta',"");
         $receita = new Receita();
-        $consulta->__set('id_receita', $GET('id_receita'));
+        $receita->__set('remedio',"");
+        $receita->__set('dosagem',"");
+        $receita->__set('tempo',"");
+        $receita->__set('obs_receita',"");
+        $receita->__set('id_receita',"");
         
         $conexao = new Conexao();
+        $id = (int)$_GET['id_consulta'];
         $servico_consultaReceita = new Serviços_consultaReceita($conexao, $consulta, $receita);
-        $servico_consultaReceita->excluirConsultaReceita();
+        $servico_consultaReceita->excluirConsultaReceita($id);
     }
 ?>

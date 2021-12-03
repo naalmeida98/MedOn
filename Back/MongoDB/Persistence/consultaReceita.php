@@ -31,7 +31,7 @@ class Serviços_consultaReceita{
         $this->dosagem = $receita->__get('dosagem');
         $this->tempo = $receita->__get('tempo');
         $this->obs_receita = $receita->__get('obs_receita');
-        $this->id_consulta = $receita->__get('id_consulta');
+        $this->id_consulta = $consulta->__get('id_consulta');
         $this->id_receita = $receita->__get('id_receita');
 	}
 		
@@ -71,29 +71,29 @@ class Serviços_consultaReceita{
         }
 	}
 
-    public function excluirConsultaReceita(){
+    public function excluirConsultaReceita(int $id){
+
         if (!isset($_SESSION)) {
             session_start();
         }
 
-        $collectionPaciente = $this->conexao->selectCollection('paciente');
-		$qtd = $collectionPaciente->count(['cpf' => $this->cpf_paciente]);
-
-		if($qtd == 1){
-            
-            $collectionConsulta = $this->conexao->selectCollection('consulta');
-            $this->id_consulta = (string)$this->id_consulta['_id']->__toString();	
-            $collectionConsulta->deleteOne(['_id' => $this->id_consulta]);
-
-            $collectionReceita = $this->conexao->selectCollection('receita');
-            $this->id_receita = (string)$this->id_receita['_id']->__toString();	
-            $collectionReceita->deleteOne(['_id' => $this->id_receita]);
-            
-
-            header('Location: ../src/pesquisa.php?excluido=1');
-        }else{
-            header('Location: ../src/pesquisa.php?erro=1');
+        $collectionConsulta = $this->conexao->selectCollection('consulta');
+        $collectionReceita = $this->conexao->selectCollection('receita');
+        $qtd = $collectionConsulta->count(['cpf_paciente' => $_SESSION["cpf_paciente"]]);
+ 
+        for($i=0; $i<$qtd; $i++){
+            $docConsulta[$i] = $collectionConsulta->findOne(['cpf_paciente' => $_SESSION["cpf_paciente"]]);
+            $id_consulta = (string)$docConsulta[$i]['_id']->__toString();
+            $docReceita[$i] = $collectionReceita->findOne(['id_consulta' => $id_consulta]);
         }
+        echo $id;
+        $id_consulta = (string)$docConsulta[$id]['_id']->__toString();
+        $result = $collectionConsulta->deleteOne(['_id' => $id_consulta]);
+
+        $id_receita = (string)$docReceita[$id]['_id']->__toString();
+        $result1 = $collectionReceita->deleteOne(['_id' => $id_receita]);
+
+        //header('Location: ../src/pesquisa.php?pesquisar=1');
 
     }
 

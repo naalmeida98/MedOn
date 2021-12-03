@@ -18,14 +18,7 @@
         
         $conexao = new Conexao();
         $servico_pesquisa = new Serviços_pesquisa($conexao,$paciente);
-        $doc = $servico_pesquisa->pesquisar();
-
-
-        // if($doc == -1){
-        //     $vazio = true;
-        // }else{
-        //     $validar = true;
-        // } 
+        $doc = $servico_pesquisa->pesquisar(); 
               
     }
 ?>

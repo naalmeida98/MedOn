@@ -20,8 +20,8 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     <link rel="stylesheet" href="css/style.css">
 
     <script>
-        function acao(id_receita, id_consulta) {
-            location.href = '../Controllers/consultaReceita.php?acao=excluirConsultaReceita&id_consulta=' + id_consulta + '&id_receita=' + id_receita;
+        function acao(id_consulta) {
+            location.href = '../Controllers/consultaReceita.php?acao=excluirConsultaReceita&id_consulta=' + id_consulta;
         }
     </script>
 </head>
@@ -94,8 +94,9 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
                     if ($doc != -1) { ?>
                         <span>Nome completo: <?php echo $doc_completo[0]['nome'] ?> <br></span>
                         <div style="float:left; margin-top:-54px; margin-left:600px; padding-top:20px;  ">
-                            <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
+                            <input id="btn-submit" type="submit" value="Excluir">
                         </div>
+                        <?php $_SESSION["cpf_paciente"] = $doc_completo[0]['cpf'] ?>
                         <span>CPF: <?php echo $doc_completo[0]['cpf'] ?> <br></span>
                         <span>Data de nascimento: <?php echo $doc_completo[0]['data_nascimento'] ?> <br></span>
                         <span>Problemas de saúde: <?php echo $doc_completo[1]['problemas'] ?> <br></span>
@@ -123,7 +124,10 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
                         for ($i = 0; $i < $doc_completo[4]; $i++) { ?>
                             <span Style="text-align:center; font-size:25px; font-weight:bold;"> Consulta <?php echo ($i + 1) ?> <br></span>
                             <div style="float:left; margin-top:-55px; margin-left:300px; padding-top:20px;  ">
-                                <input id="btn-submit" onclick="acao(<?php echo $nome_despesa[$i]['codigo'] ?>)" type="submit" value="Excluir">
+                                <?php 
+                                $i = (string)$i;
+                                echo $i?>
+                                <input id="btn-submit" onclick="acao(<?php echo $i ?>)" type="submit" value="Excluir">
                             </div>
                             <span>Médico: <?php echo $doc_completo[2][$i]['nome_medico'] ?> <br></span>
                             <span>Data: <?php echo $doc_completo[2][$i]['data'] ?> <br></span>
