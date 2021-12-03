@@ -11,7 +11,11 @@
 
 
     <header class="cabecalho">
-        <a class="logo" href="cadastroUsuario.php"> <img src="img/logo.jpeg"> </a>
+
+        <a class="logo" href="home.php"> <img src="img/logo.jpeg"> </a>
+        <div class="botão-sair">
+            <ul><a href="../Controllers/logout.php"> Sair </a></ul>
+        </div>
     </header>
 
     <div class="clear"></div>

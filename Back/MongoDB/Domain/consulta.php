@@ -4,6 +4,7 @@ class Consulta{
 	private $data;
 	private $diagnostico;
     private $obs_consulta;
+	private $id_consulta;
 
 
 	public function __get($atributo) {
