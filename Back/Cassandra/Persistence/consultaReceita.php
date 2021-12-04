@@ -18,6 +18,7 @@ class Serviços_consultaReceita
     private $dosagem;
     private $tempo;
     private $obs_receita;
+    private $id_consulta;
 
     public function __construct(Conexao $conexao, Consulta $consulta, Receita $receita)
     {
@@ -30,6 +31,7 @@ class Serviços_consultaReceita
         $this->dosagem = $receita->__get('dosagem');
         $this->tempo = $receita->__get('tempo');
         $this->obs_receita = $receita->__get('obs_receita');
+        $this->id_consulta = $consulta->__get('id_consulta');
     }
 
     public function inserirConsultaReceita()
@@ -78,5 +80,46 @@ class Serviços_consultaReceita
         } else {
             header('Location: ../src/cadastroConsultaReceita.php?pacienteinexistente=1');
         }
+    }
+
+    public function excluirConsultaReceita(int $id)
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        echo "\n<br />\n<br />CPF: ";
+        print_r(($_SESSION["cpf_paciente"]));
+
+        $collectionConsulta = $this->conexao->querySync('SELECT * FROM "consulta" WHERE "cpf_paciente" = :cpf_paciente ', ['cpf_paciente' => $_SESSION["cpf_paciente"]], null, ['names_for_values' => true]);
+        $consulta = (array)$collectionConsulta->fetchAll();
+        $qtd = count($consulta);
+
+        echo "\n<br />\n<br />Consulta: ";
+        print_r(($consulta));
+
+        for ($i = 0; $i < $qtd; $i++) {
+            $docConsulta[$i] = $consulta[$i];
+            $id_consulta = $docConsulta[$i]['id_consulta'];
+            $collectionReceita = $this->conexao->querySync('SELECT * FROM "receita" WHERE "id_consulta" = :id_consulta ', ['id_consulta' => $id_consulta], null, ['names_for_values' => true]);
+            $receita = (array)$collectionReceita->fetchAll();
+            $docReceita[$i] = $receita;
+        }
+        echo "\n<br />\n<br />";
+        echo $id;
+        $id_consulta = $docConsulta[$id]['id_consulta'];
+        echo "\n<br />\n<br />Consulta: ";
+        print_r($docConsulta[$id]);
+        echo "\n<br />\n<br />ID Consulta: ";
+        print_r($id_consulta);
+        try {
+            $cqlConsultaDelete = 'DELETE FROM "consulta" WHERE "cpf_paciente" = :cpf_paciente AND "id_consulta" = :id_consulta';
+            $this->conexao->querySync($cqlConsultaDelete, ['cpf_paciente' => $_SESSION["cpf_paciente"], 'id_consulta' => 1], null, ['names_for_values' => true]);
+            $cqlReceitaDelete = 'DELETE FROM "receita" WHERE "id_consulta" = :id_consulta';
+            $this->conexao->querySync($cqlReceitaDelete, ['id_consulta' => 1], null, ['names_for_values' => true]);
+        } catch (Exception $e) {
+            echo $e;
+        }
+        // header('Location: ../src/pesquisa.php?pesquisar=$_SESSION["cpf_paciente"]');
     }
 } ?>

@@ -7,6 +7,7 @@ class Receita
     private $dosagem;
     private $tempo;
     private $obs_receita;
+    private $id_consulta;
 
     public function __get($atributo)
     {
