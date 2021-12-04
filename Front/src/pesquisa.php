@@ -1,11 +1,19 @@
 <?php
 
 if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
-    $acao = 'pesquisar';
+    $acao = 'pesquisar1';
     require_once '../Controllers/pesquisa.php';
-    if ($doc != -1) {
+    if ($doc != null) {
         $doc_completo = $doc_completo = isset($doc) ? $doc : $doc;
-        print_r($doc_completo);
+       // print_r($doc_completo);
+    }
+}
+elseif (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 2) {
+    $acao = 'pesquisar2';
+    require_once '../Controllers/pesquisa.php';
+    if ($doc != null) {
+        $doc_completo = $doc_completo = isset($doc) ? $doc : $doc;
+       // print_r($doc_completo);
     }
 }
 
@@ -90,8 +98,8 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
         <div class="centralizar">
 
             <div class="espaco">
-                <?php if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
-                    if ($doc != -1) { ?>
+                <?php if (isset($_GET['pesquisar']) && ($_GET['pesquisar'] == 1 || $_GET['pesquisar'] == 2)) {
+                    if ($doc != null) { ?>
                         <span>Nome completo: <?php echo $doc_completo[0]['nome'] ?> <br></span>
                         <div style="float:left; margin-top:-54px; margin-left:600px; padding-top:20px;  ">
                             <input id="btn-submit" type="submit" value="Excluir">
@@ -118,32 +126,29 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
 
             <div class="espaco">
                 <?php
-                if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
-                    if ($doc != -1) {
+                if (isset($_GET['pesquisar']) && ($_GET['pesquisar'] == 1 || $_GET['pesquisar'] == 2)) {
+                    if ($doc != null) {
                         $i = isset($i) ? 0 : 0;
                         for ($i = 0; $i < $doc_completo[4]; $i++) { ?>
                             <span Style="text-align:center; font-size:25px; font-weight:bold;"> Consulta <?php echo ($i + 1) ?> <br></span>
-                            <div style="float:left; margin-top:-55px; margin-left:590px; padding-top:20px;  ">
-                                <?php
-                                $i = (string)$i;
-                                echo $i ?>
+                            <div style="float:left; margin-top:-55px; margin-left:300px; padding-top:20px;  ">
+                                <?php 
+                                $i = (string)$i; ?>
                                 <input id="btn-submit" onclick="acao(<?php echo $i ?>)" type="submit" value="Excluir">
                             </div>
-                            <div Style="padding-top:40px;">
-                                <span>Médico: <?php echo $doc_completo[2][$i]['nome_medico'] ?> <br></span>
-                                <span>Data: <?php echo $doc_completo[2][$i]['data'] ?> <br></span>
-                                <span>Diagnóstico: <?php echo $doc_completo[2][$i]['diagnostico'] ?> <br></span>
-                                <span>Observação da consulta: <?php echo $doc_completo[2][$i]['obs_consulta'] ?> <br></span>
+                            <span>Médico: <?php echo $doc_completo[2][$i]['nome_medico'] ?> <br></span>
+                            <span>Data: <?php echo $doc_completo[2][$i]['data'] ?> <br></span>
+                            <span>Diagnóstico: <?php echo $doc_completo[2][$i]['diagnostico'] ?> <br></span>
+                            <span>Observação da consulta: <?php echo $doc_completo[2][$i]['obs_consulta'] ?> <br></span>
 
-                                <span>Medicação:<br> <?php echo $doc_completo[3][$i]['remedio'] ?> </span>
-                                <span>Dosagem: <?php echo $doc_completo[3][$i]['dosagem'] ?> <br></span>
-                                <span>Tempo: <?php echo $doc_completo[3][$i]['tempo'] ?> <br></span>
-                                <span>Observação da Medicação: <?php echo $doc_completo[3][$i]['obs_receita'] ?> <br></span>
-                                <hr Style="margin-right:30px;">
-                            </div>
+                            <span>Medicação:<br> <?php echo $doc_completo[3][$i]['remedio'] ?> </span>
+                            <span>Dosagem: <?php echo $doc_completo[3][$i]['dosagem'] ?> <br></span>
+                            <span>Tempo: <?php echo $doc_completo[3][$i]['tempo'] ?> <br></span>
+                            <span>Observação da Medicação: <?php echo $doc_completo[3][$i]['obs_receita'] ?> <br></span>
+                            <hr Style="margin-right:30px;">
                 <?php }
                     }
-                    if ($doc == -1) {
+                    if ($doc == null) {
                         echo "CPF inválido";
                     }
                 } ?>

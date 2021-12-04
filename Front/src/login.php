@@ -2,8 +2,6 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +49,7 @@ if (!isset($_SESSION)) {
                         <h4>ATENÇÃO!!!</h4>
                         <h5>CRM ou senha incorretos! </h5>
                     </div>
-                
+                <?php } ?>
                 
             </div>
             <div style="background-color: #63e3ec; border-radius:10px; margin-top:10px;">

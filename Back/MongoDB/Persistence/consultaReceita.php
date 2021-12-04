@@ -1,6 +1,7 @@
 
 <?php
 
+use Cassandra\Response\Result;
 use MongoDB\Client;
 use MongoDB\Driver\Cursor;
 
@@ -87,14 +88,13 @@ class Serviços_consultaReceita{
             $docReceita[$i] = $collectionReceita->findOne(['id_consulta' => $id_consulta]);
         }
         echo $id;
-        $id_consulta = (string)$docConsulta[$id]['_id']->__toString();
+        $id_consulta = $docConsulta[$id]['_id'];
         $result = $collectionConsulta->deleteOne(['_id' => $id_consulta]);
 
-        $id_receita = (string)$docReceita[$id]['_id']->__toString();
+        $id_receita = $docReceita[$id]['_id'];
         $result1 = $collectionReceita->deleteOne(['_id' => $id_receita]);
 
-        //header('Location: ../src/pesquisa.php?pesquisar=1');
-
+        header('Location: ../src/pesquisa.php?pesquisar=2');
     }
 
 

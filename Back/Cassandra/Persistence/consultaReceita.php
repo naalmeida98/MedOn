@@ -88,15 +88,15 @@ class Serviços_consultaReceita
             session_start();
         }
 
-        echo "\n<br />\n<br />CPF: ";
-        print_r(($_SESSION["cpf_paciente"]));
+        // echo "\n<br />\n<br />CPF: ";
+        // print_r(($_SESSION["cpf_paciente"]));
 
         $collectionConsulta = $this->conexao->querySync('SELECT * FROM "consulta" WHERE "cpf_paciente" = :cpf_paciente ', ['cpf_paciente' => $_SESSION["cpf_paciente"]], null, ['names_for_values' => true]);
         $consulta = (array)$collectionConsulta->fetchAll();
         $qtd = count($consulta);
 
-        echo "\n<br />\n<br />Consulta: ";
-        print_r(($consulta));
+        // echo "\n<br />\n<br />Consulta: ";
+        // print_r(($consulta));
 
         for ($i = 0; $i < $qtd; $i++) {
             $docConsulta[$i] = $consulta[$i];
@@ -105,13 +105,13 @@ class Serviços_consultaReceita
             $receita = (array)$collectionReceita->fetchAll();
             $docReceita[$i] = $receita;
         }
-        echo "\n<br />\n<br />";
-        echo $id;
+        // echo "\n<br />\n<br />";
+        // echo $id;
         $id_consulta = $docConsulta[$id]['id_consulta'];
-        echo "\n<br />\n<br />Consulta: ";
-        print_r($docConsulta[$id]);
-        echo "\n<br />\n<br />ID Consulta: ";
-        print_r($id_consulta);
+        // echo "\n<br />\n<br />Consulta: ";
+        // print_r($docConsulta[$id]);
+        // echo "\n<br />\n<br />ID Consulta: ";
+        //print_r($id_consulta);
         try {
             $cqlConsultaDelete = 'DELETE FROM "consulta" WHERE "cpf_paciente" = :cpf_paciente AND "id_consulta" = :id_consulta';
             $this->conexao->querySync($cqlConsultaDelete, ['cpf_paciente' => $_SESSION["cpf_paciente"], 'id_consulta' => 1], null, ['names_for_values' => true]);
@@ -120,6 +120,7 @@ class Serviços_consultaReceita
         } catch (Exception $e) {
             echo $e;
         }
-        // header('Location: ../src/pesquisa.php?pesquisar=$_SESSION["cpf_paciente"]');
+
+        header('Location: ../src/pesquisa.php?pesquisar=2');
     }
 } ?>
