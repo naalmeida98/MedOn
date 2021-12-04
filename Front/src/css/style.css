@@ -201,7 +201,6 @@ form[id="botão"] {
     margin-left: 20px;
 }
 
-.fulBotao {}
 
 
 .frase {
@@ -429,8 +428,8 @@ select {
 
 .pesquisePacient {
     background-color: #63e3ec;
-    min-height: 400px;
-    max-height: 1200px;
+    min-height: 420px;
+    max-height: 1500px;
     width: 800px;
     float: left;
     margin-top: 50px;
@@ -459,8 +458,7 @@ select {
 }
 
 .espaco {
-    padding-bottom: 30px;
-    padding-top: 10px;
+    padding-bottom: 0px;
     padding-left: 30px;
 }
 

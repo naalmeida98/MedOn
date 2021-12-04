@@ -22,13 +22,13 @@
 
     <div class="bot">
         <form id="botão" action="home.php" method="post" name="pagprincipal">
-            <div class=fulBotao>
+            <div class=ful>
                 <input id="btn-submitLogi" type="submit" value="Home">
             </div>
         </form>
 
         <form id="botão" action="cadastroConsultaReceita.php" method="post" name="cadastroReceita">
-            <div class=fulBotao>
+            <div class=ful>
                 <input id="btn-submitLogi" type="submit" value="Cadastro consulta">
             </div>
         </form>
@@ -42,8 +42,6 @@
                 <input id="btn-submitLogi" type="submit" value="Pesquisa">
             </div>
         </form>
-
-
     </div>
     <div class="clear"></div>
 
