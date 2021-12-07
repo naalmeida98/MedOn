@@ -1,107 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Festive&family=Lobster&display=swap');
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 a {
-  text-decoration: none;
-  color: black;
-  padding-right: 5px;
-  text-align: center;
+    text-decoration: none;
+    color: black;
+    padding-right: 5px;
+    text-align: center;
 }
 
 ul {
-  background-color: #22d6b5;
-  border-radius: 20px;
-  text-align: center;
-  width: 50px;
-  padding-left: 5px;
-  margin-right: 5px;
+    background-color: #22d6b5;
+    border-radius: 20px;
+    text-align: center;
+    width: 50px;
+    padding-left: 5px;
+    margin-right: 5px;
 }
 
 img {
-  width: 125px;
-  height: 85px;
+    width: 125px;
+    height: 85px;
 }
 
 .cabecalho {
-  background-color: #63e3ec;
-  width: 100%;
-  height: 40%;
-  float: left;
-  padding: 0 auto;
+    background-color: #63e3ec;
+    width: 100%;
+    height: 40%;
+    float: left;
+    padding: 0 auto;
 }
 
 .logo {
-  float: left;
-  margin-top: 0 auto;
+    float: left;
+    margin-top: 0 auto;
 }
 
 .navbar {
-  height: 50px;
-  background-color: black;
-  font-size: 125%;
-  font-family: 'Noto Sans', sans-serif;
-  text-align: center;
+    height: 50px;
+    background-color: black;
+    font-size: 125%;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
 }
 
 .menu {
-  color: #22d6b5;
-  height: 70px;
+    color: #22d6b5;
+    height: 70px;
 }
 
 input {
-  width: 98%;
-  margin: 2px;
+    width: 98%;
+    margin: 2px;
 }
 
 select {
-  width: 100%;
+    width: 100%;
 }
 
 select[type='month'] {
-  margin-top: 10px;
-  width: 50%;
-  padding-top: 0px;
+    margin-top: 10px;
+    width: 50%;
+    padding-top: 0px;
 }
 
 label[for='mes'] {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 input[type='month'] {
-  width: 20%;
+    width: 20%;
 }
 
 input[type='submit'] {
-  border-radius: 10px;
-  height: 30px;
-  text-align: center;
-  background-color: #50f688;
-  font-weight: bold;
+    border-radius: 10px;
+    height: 30px;
+    text-align: center;
+    background-color: #50f688;
+    font-weight: bold;
 }
 
 input[id='btn-submitLogin'] {
-  border-radius: 100px;
-  height: 70px;
-  font-size: 15px;
-  text-align: center;
-  width: 70px;
-  margin-right: 100px;
-  margin-top: 10px;
+    border-radius: 100px;
+    height: 70px;
+    font-size: 15px;
+    text-align: center;
+    width: 70px;
+    margin-right: 100px;
+    margin-top: 10px;
 }
 
 input[id='btn-submitLogi'] {
-  height: 40px;
-  font-size: 13px;
-  text-align: center;
-  width: 210px;
-  margin-right: 10px;
-  margin-top: 10px;
+    height: 40px;
+    font-size: 13px;
+    text-align: center;
+    width: 210px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
+
 
 /*
 #botão {
@@ -112,531 +112,537 @@ input[id='btn-submitLogi'] {
 }*/
 
 form[id='botão'] {
-  display: inline-block;
-  margin-top: 130px;
-  margin-bottom: 30px;
-  border-radius: 20px;
-  float: left;
-  margin-left: 320px;
+    display: inline-block;
+    margin-top: 130px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 320px;
 }
 
 #register-form {
-  font-size: 18 px;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 10 px;
-  vertical-align: middle;
+    font-size: 18 px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10 px;
+    vertical-align: middle;
 }
 
 .cadastrar {
-  background-color: #50f688;
-  color: black;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 10px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: bold;
+    background-color: #50f688;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .cadastro {
-  background-color: #63e3ec;
-  height: 380px;
-  width: 502px;
-  float: right;
-  margin: 50px;
-  border-radius: 10px;
-  border: solid 1px #fff;
+    background-color: #63e3ec;
+    height: 380px;
+    width: 502px;
+    float: right;
+    margin: 50px;
+    border-radius: 10px;
+    border: solid 1px #fff;
 }
 
 .login {
-  background-color: #63e3ec;
-  min-height: 40px;
-  max-height: 60px;
-  width: 500px;
-  float: right;
-  margin-top: 25px;
-  padding-top: 5px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 20px;
-  border: solid 1px #fff;
+    background-color: #63e3ec;
+    min-height: 40px;
+    max-height: 60px;
+    width: 500px;
+    float: right;
+    margin-top: 25px;
+    padding-top: 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    border: solid 1px #fff;
 }
 
 .full-box {
-  margin: 10px;
-  flex: 1 1 100%;
-  position: relative;
+    margin: 10px;
+    flex: 1 1 100%;
+    position: relative;
 }
 
 .fullBox {
-  margin: 10px;
-  flex: 1 1 100%;
-  position: relative;
-  text-align: center;
+    margin: 10px;
+    flex: 1 1 100%;
+    position: relative;
+    text-align: center;
 }
 
 .full {
-  width: 25%;
-  margin-left: 180px;
+    width: 25%;
+    margin-left: 180px;
 }
 
 .fullCenter {
-  width: 25%;
-  margin-left: 298px;
+    width: 25%;
+    margin-left: 298px;
 }
 
 .fullCente {
-  width: 25%;
-  margin-left: 370px;
+    width: 25%;
+    margin-left: 370px;
 }
 
 .ful {
-  width: 25%;
-  margin-left: 20px;
+    width: 25%;
+    margin-left: 20px;
 }
 
-.fulBotao {
-}
+.fulBotao {}
 
 .frase {
-  color: black;
-  font-size: 130px;
-  margin-top: 180px;
-  margin-left: 130px;
-  padding: 0 auto;
-  font-family: Lobster;
+    color: black;
+    font-size: 130px;
+    margin-top: 180px;
+    margin-left: 130px;
+    padding: 0 auto;
+    font-family: Lobster;
 }
 
 .required:after {
-  content: ' *';
-  color: red;
+    content: ' *';
+    color: red;
 }
+
 
 /*tela login*/
 
 .fundoPretoLogin {
-  color: black;
-  height: 110px;
-  float: left;
-  font-size: 300%;
-  text-align: left;
-  margin-left: 80px;
-  margin-top: 20 px;
+    color: black;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 20 px;
 }
 
 .fazerLogin {
-  background-color: #63e3ec;
-  height: 220px;
-  width: 500px;
-  float: left;
-  margin: 250px;
-  margin-left: 180px;
-  border-radius: 10px;
+    background-color: #63e3ec;
+    height: 220px;
+    width: 500px;
+    float: left;
+    margin: 250px;
+    margin-left: 180px;
+    border-radius: 10px;
 }
 
 .login-center {
-  padding: 20px;
+    padding: 20px;
 }
 
 .receita-center {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 .logar {
-  background-color: #50f688;
-  color: black;
-  text-align: center;
-  margin: 0 auto;
-  padding: 2px;
-  font-size: 20px;
-  border-radius: 10px;
-  border: solid 1px #fff;
+    background-color: #50f688;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: solid 1px #fff;
 }
 
 .ola {
-  color: #63e3ec;
-  font-size: 40px;
-  text-align: center;
-  padding-top: 60px;
-  position: relative;
-  top: 50%;
-  transform: translate(0%, 25%);
+    color: #63e3ec;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 60px;
+    position: relative;
+    top: 50%;
+    transform: translate(0%, 25%);
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
 .fundoPretoCadastro {
-  color: #22d6b5;
-  height: 110px;
-  float: left;
-  font-size: 300%;
-  text-align: left;
-  margin-top: 0;
-  margin: 40px;
-  padding-top: 0;
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: left;
+    margin-top: 0;
+    margin: 40px;
+    padding-top: 0;
 }
 
 .fundoAzul {
-  background-color: #22d6b5;
-  color: black;
-  height: 110px;
+    background-color: #22d6b5;
+    color: black;
+    height: 110px;
 }
+
 
 /* botão sair*/
 
 .sair {
-  float: right;
-  text-align: center;
+    float: right;
+    text-align: center;
 }
 
 .mes {
-  margin-top: 70px;
-  background-color: #d6a913;
-  color: black;
-  width: 100%;
-  height: 30px;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10 px;
+    margin-top: 70px;
+    background-color: #d6a913;
+    color: black;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10 px;
 }
+
+.teste {
+    margin-left: 0px;
+}
+
 
 /*receita e despesa*/
 
 .receita_despesa {
-  width: 100%;
-  height: 50px;
-  color: black;
-  margin-left: 370px;
+    width: 0px;
+    height: 50px;
+    color: black;
+    margin-left: 0px;
 }
 
 .receita_despes {
-  width: 100%;
-  height: 50px;
-  color: black;
-  margin-left: 130px;
+    width: 100%;
+    height: 50px;
+    color: black;
+    margin-left: 130px;
 }
 
 .botões {
-  width: 100%;
-  height: 50px;
-  color: black;
-  margin-left: 130px;
+    width: 100%;
+    height: 50px;
+    color: black;
+    margin-left: 130px;
 }
 
 .textoReceita {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 select {
-  text-align: center;
-  padding: 5px;
-  border-radius: 8px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 .register-form-receita {
-  font-size: 18 px;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 10 px;
+    font-size: 18 px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10 px;
 }
 
 .PretoReceita {
-  color: #22d6b5;
-  height: 110px;
-  float: left;
-  font-size: 300%;
-  text-align: center;
-  margin: 40px;
+    color: #22d6b5;
+    height: 110px;
+    float: left;
+    font-size: 300%;
+    text-align: center;
+    margin: 40px;
 }
 
 .cadastrarReceita {
-  background-color: #22d6b5;
-  height: 350px;
-  width: 500px;
-  float: left;
-  margin: 240px;
-  margin-left: 450px;
-  border-radius: 10px;
-  border: solid 1px #fff;
+    background-color: #22d6b5;
+    height: 350px;
+    width: 500px;
+    float: left;
+    margin: 240px;
+    margin-left: 450px;
+    border-radius: 10px;
+    border: solid 1px #fff;
 }
 
 .cadrastrarMedico {
-  background-color: #63e3ec;
-  height: 370px;
-  width: 500px;
-  float: left;
-  margin: 70px;
-  margin-left: 430px;
-  margin-bottom: 50px;
-  border-radius: 10px;
+    background-color: #63e3ec;
+    height: 370px;
+    width: 500px;
+    float: left;
+    margin: 70px;
+    margin-left: 430px;
+    margin-bottom: 50px;
+    border-radius: 10px;
 }
 
 .cadrastrarPaciente {
-  background-color: #63e3ec;
-  height: 580px;
-  width: 800px;
-  float: left;
-  margin: 70px;
-  margin-left: 800px;
-  margin-bottom: 50px;
-  border-radius: 10px;
-  border: solid 1px #fff;
+    background-color: #63e3ec;
+    height: 580px;
+    width: 800px;
+    float: left;
+    margin: 70px;
+    margin-left: 800px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: solid 1px #fff;
 }
 
 .cadrastrarConsulta {
-  background-color: #63e3ec;
-  height: 730px;
-  width: 980px;
-  float: left;
-  margin: 70px;
-  margin-left: 800px;
-  margin-bottom: 50px;
-  border-radius: 10px;
+    background-color: #63e3ec;
+    height: 730px;
+    width: 980px;
+    float: left;
+    margin: 70px;
+    margin-left: 800px;
+    margin-bottom: 50px;
+    border-radius: 10px;
 }
 
 .cadrastrarReceita {
-  background-color: #22d6b5;
-  height: 270px;
-  width: 500px;
-  float: left;
-  margin: 70px;
-  margin-left: 450px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  border: solid 1px #fff;
+    background-color: #22d6b5;
+    height: 270px;
+    width: 500px;
+    float: left;
+    margin: 70px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    border: solid 1px #fff;
 }
 
 .pesquisePaciente {
-  background-color: #63e3ec;
-  height: 180px;
-  width: 800px;
-  float: left;
-  margin: 30px;
-  margin-left: 800px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  font-size: 16px;
+    background-color: #63e3ec;
+    height: 180px;
+    width: 800px;
+    float: left;
+    margin: 30px;
+    margin-left: 800px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 .pesquisePacient {
-  background-color: #63e3ec;
-  min-height: 400px;
-  max-height: 2500px;
-  width: 800px;
-  float: left;
-  margin-top: 30px;
-  margin-left: 800px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  font-size: 16px;
-  line-height: 1.5;
+    background-color: #63e3ec;
+    min-height: 400px;
+    max-height: 2500px;
+    width: 800px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 800px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .prontuario {
-  background-color: #63e3ec;
-  min-height: 250px;
-  max-height: 800px;
-  width: 800px;
-  float: left;
-  margin-top: 50px;
-  margin-left: 800px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  font-size: 16px;
-  line-height: 1.5;
+    background-color: #63e3ec;
+    min-height: 250px;
+    max-height: 800px;
+    width: 800px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 800px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .centralizar {
-  transform: translate(0%, 25%);
+    transform: translate(0%, 25%);
 }
 
 .centro {
-  padding-top: 35px;
-  margin-left: 30px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+    padding-top: 35px;
+    margin-left: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .centro-cadastro {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .espaco {
-  padding-bottom: 30px;
-  padding-top: 10px;
-  padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 30px;
 }
 
 .espacopessoa {
-  padding-bottom: 20px;
-  padding-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .despesas {
-  background-color: #22d6b5;
-  min-width: 500px;
-  max-width: 800px;
-  float: left;
-  border-radius: 10px;
-  margin-top: 120px;
+    background-color: #22d6b5;
+    min-width: 500px;
+    max-width: 800px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 120px;
 }
 
 .receitas {
-  background-color: #22d6b5;
-  min-width: 500px;
-  max-width: 700px;
-  float: left;
-  border-radius: 10px;
-  margin-top: 100px;
-  margin-left: 450px;
-  min-height: 250px;
-  max-height: 500px;
+    background-color: #22d6b5;
+    min-width: 500px;
+    max-width: 700px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 450px;
+    min-height: 250px;
+    max-height: 500px;
 }
 
 .metas {
-  background-color: #22d6b5;
-  height: 250px;
-  width: 500px;
-  float: left;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-left: 450px;
-  text-align: center;
+    background-color: #22d6b5;
+    height: 250px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 450px;
+    text-align: center;
 }
 
 .cadrastrarMeta {
-  background-color: #22d6b5;
-  min-height: 250px;
-  max-height: 350px;
-  width: 500px;
-  float: left;
-  margin-top: 80px;
-  margin-left: 450px;
-  margin-bottom: 0px;
-  border-radius: 10px;
+    background-color: #22d6b5;
+    min-height: 250px;
+    max-height: 350px;
+    width: 500px;
+    float: left;
+    margin-top: 80px;
+    margin-left: 450px;
+    margin-bottom: 0px;
+    border-radius: 10px;
 }
 
 .receita {
-  background-color: #d6a913;
-  width: 100%;
-  height: 300px;
-  margin-left: 0px;
-  padding-top: 15px;
-  text-align: center;
-  font-size: 25px;
+    background-color: #d6a913;
+    width: 100%;
+    height: 300px;
+    margin-left: 0px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 25px;
 }
 
 .despesa {
-  background-color: #22d6b5;
-  width: 100%;
-  height: 180px;
-  margin-top: 0;
-  padding-top: 5px;
-  font-size: 25px;
-  text-align: center;
+    background-color: #22d6b5;
+    width: 100%;
+    height: 180px;
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .balanco {
-  background-color: #22d6b5;
-  height: 320px;
-  width: 500px;
-  float: left;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-left: 450px;
-  text-align: center;
-  padding-top: 0px;
+    background-color: #22d6b5;
+    height: 320px;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 450px;
+    text-align: center;
+    padding-top: 0px;
 }
 
 .centrobalanco {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .despesaCategorias {
-  background-color: #22d6b5;
-  color: black;
-  width: 100%;
-  height: 500px;
-  margin-top: 0;
-  padding-top: 5px;
-  font-size: 25px;
-  text-align: center;
+    background-color: #22d6b5;
+    color: black;
+    width: 100%;
+    height: 500px;
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .botão-sair {
-  float: right;
-  padding: 5px;
-  padding-right: 30px;
-  color: black;
-  text-align: center;
+    float: right;
+    padding: 5px;
+    padding-right: 30px;
+    color: black;
+    text-align: center;
 }
 
 .pessoacadastrada {
-  background-color: #22d6b5;
-  width: 500px;
-  float: left;
-  border-radius: 10px;
-  margin-top: 100px;
-  margin-left: 450px;
-  min-height: 250px;
-  max-height: 500px;
-  text-align: center;
-  padding-bottom: 25px;
+    background-color: #22d6b5;
+    width: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 450px;
+    min-height: 250px;
+    max-height: 500px;
+    text-align: center;
+    padding-bottom: 25px;
 }
 
 .msgForm {
-  text-align: center;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  margin-top: 50px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 50px;
 }
 
 #donutchart {
-  float: right;
+    float: right;
 }
 
 .grafico {
-  margin-top: 80px;
-  margin-right: 150px;
+    margin-top: 80px;
+    margin-right: 150px;
 }
 
 #copyright {
-  background-color: #63e3ec;
-  margin-top: 330px;
-  text-align: center;
-  font-size: 12px;
-  padding: 10px;
+    background-color: #63e3ec;
+    margin-top: 330px;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
 }
 
 .graficomsg {
-  background-color: #d6a913;
-  width: 500px;
-  float: left;
-  margin-top: 110px;
-  margin-left: 450px;
-  text-align: center;
-  border-radius: 10px;
+    background-color: #d6a913;
+    width: 500px;
+    float: left;
+    margin-top: 110px;
+    margin-left: 450px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .texto {
-  text-align: center;
-  word-spacing: 380px;
+    text-align: center;
+    word-spacing: 380px;
 }
 
 .cadastreTexto {
-  text-align: center;
-  padding-top: 50px;
+    text-align: center;
+    padding-top: 50px;
 }
 
 textarea {
-  /* Para alinhar corretamente os campos de texto de várias linhas com sua label*/
-  vertical-align: top;
-  /* Para dar espaço suficiente para digitar algum texto */
-  height: 5em;
-  /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
-  resize: vertical;
-  width: 98%;
+    /* Para alinhar corretamente os campos de texto de várias linhas com sua label*/
+    vertical-align: top;
+    /* Para dar espaço suficiente para digitar algum texto */
+    height: 5em;
+    /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
+    resize: vertical;
+    width: 98%;
 }
