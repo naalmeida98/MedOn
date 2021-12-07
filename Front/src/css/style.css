@@ -205,8 +205,8 @@ form[id='botão'] {
 .fulBotao {
 
     width: 25%;
-    margin-left: 5rem;
-    margin-right: 2rem;
+    margin-left: 4rem;
+    margin-right: 1rem;
 }
 
 .frase {
@@ -411,7 +411,7 @@ select {
     width: 980px;
     float: left;
     margin: 70px;
-    margin-left: 800px;
+    margin-left: 10rem;
     margin-bottom: 50px;
     border-radius: 10px;
 }
@@ -447,7 +447,7 @@ select {
     width: 800px;
     float: left;
     margin-top: 30px;
-    margin-left: 800px;
+    margin-left: 17rem;
     margin-bottom: 0px;
     border-radius: 10px;
     font-size: 16px;
@@ -461,7 +461,8 @@ select {
     width: 800px;
     float: left;
     margin-top: 50px;
-    margin-left: 800px;
+
+    margin-left: 17rem;
     margin-bottom: 0px;
     border-radius: 10px;
     font-size: 16px;
