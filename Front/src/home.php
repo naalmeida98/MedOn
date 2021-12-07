@@ -26,32 +26,30 @@ if (!isset($_SESSION)) {
     <div class="ola">
         <p>Bem-vindo Dr/a. <?php echo $_SESSION["nome_medico"]; ?></p>
     </div>
+    <div class="clear"></div>
+    <div>
 
-
-    <div class="receita_despesa">
-        <span class="teste">
         <form id="botão" action="../src/cadastroConsultaReceita.php" method="post" name="cadConsulta">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
             </div>
         </form>
-        </span>
-        <div class="clear"></div>
-        <span class="teste">
+
+
+
         <form id="botão" action="../src/cadastroPacienteProntuario.php" method="post" name="cadPaciente">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
             </div>
         </form>
-        </span>
-        <div class="clear"></div>
-        <span class="teste">
+
+
         <form id="botão" action="../src/pesquisa.php" method="post" name="pesquisa">
             <div class="ful">
                 <input id="btn-submitLogin" type="submit" value="+">
             </div>
         </form>
-        </span>
+
 
     </div>
     <div class="clear"></div>
