@@ -199,7 +199,7 @@ form[id='botão'] {
 
 .ful {
     width: 25%;
-    margin-left: 8rem;
+    margin-left: 8.5rem;
     margin-right: 10rem;
 
 }
@@ -639,7 +639,7 @@ select {
 
 .texto {
     text-align: center;
-    word-spacing: 0px;
+    word-spacing: 15rem;
 }
 
 .cadastreTexto {
