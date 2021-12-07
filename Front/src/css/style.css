@@ -639,7 +639,7 @@ select {
 
 .texto {
     text-align: center;
-    word-spacing: 380px;
+    word-spacing: 0px;
 }
 
 .cadastreTexto {
