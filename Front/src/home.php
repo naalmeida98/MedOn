@@ -31,8 +31,7 @@ if (!isset($_SESSION)) {
 
         <form id="botão" action="../src/cadastroConsultaReceita.php" method="post" name="cadConsulta">
             <div class="ful">
-                
-                <input id="btn-submitLogin" type="submit" value="+">
+                <input id="btn-submitLogin" type="submit" value=" +">
             </div>
         </form>
 

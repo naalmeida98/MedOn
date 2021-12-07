@@ -91,8 +91,7 @@ input[id='btn-submitLogin'] {
     font-size: 15px;
     text-align: center;
     width: 70px;
-    margin-right: 400%;
-    margin-left: 150%;
+
     margin-top: 10px;
 }
 
@@ -102,8 +101,7 @@ input[id='btn-submitLogi'] {
     font-size: 13px;
     text-align: center;
     width: 210px;
-    margin-right: 10px;
-    margin-top: 10px;
+
 }
 
 
@@ -204,7 +202,12 @@ form[id='botão'] {
 
 }
 
-.fulBotao {}
+.fulBotao {
+
+    width: 25%;
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
 
 .frase {
     color: black;
@@ -396,7 +399,7 @@ select {
     width: 800px;
     float: left;
     margin: 70px;
-    margin-left: 800px;
+    margin-left: 17rem;
     margin-bottom: 50px;
     border-radius: 10px;
     border: solid 1px #fff;
@@ -431,7 +434,7 @@ select {
     width: 800px;
     float: left;
     margin: 30px;
-    margin-left: 800px;
+    margin-left: 17rem;
     margin-bottom: 0px;
     border-radius: 10px;
     font-size: 16px;
