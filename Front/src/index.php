@@ -36,7 +36,7 @@ if (!isset($_SESSION)) {
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Senha</label>
-                    <input type="text" name="senha" id="senha" placeholder="Digite sua senha">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
                 </div>
                 <div class="required" style="padding-left:10px;"> Itens obrigatórios</div>
                 <div class="full">
@@ -50,10 +50,10 @@ if (!isset($_SESSION)) {
                         <h5>CRM ou senha incorretos! </h5>
                     </div>
                 <?php } ?>
-                
+
             </div>
             <div style="background-color: #63e3ec; border-radius:10px; margin-top:10px;">
-                <?php 
+                <?php
                 if (isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
                     <div class="msgForm">
                         <h5>Erro ao logar, tente novamente!</h5>
