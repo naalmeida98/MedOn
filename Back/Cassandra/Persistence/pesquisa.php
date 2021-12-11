@@ -21,11 +21,6 @@ class Serviços_pesquisa
     {
         $this->conexao = $conexao->conectar();
         $this->cpf = $paciente->__get('cpf');
-        // $this->data_nascimento = $paciente->__get('data_nascimento');
-        // $this->problemas = $prontuario->__get('problemas');
-        // $this->medicacoes = $prontuario->__get('medicacoes');
-        // $this->alergias = $prontuario->__get('alergias');
-        // $this->cirurgias = $prontuario->__get('cirurgias');
     }
 
     public function pesquisar()
@@ -45,37 +40,21 @@ class Serviços_pesquisa
             $collectionProntuario = $this->conexao->querySync('SELECT * FROM "prontuario" WHERE "cpf_paciente" = :cpf_paciente ', ['cpf_paciente' => $this->cpf], null, ['names_for_values' => true]);
             $docProntuario = (array)$collectionProntuario->fetchAll();
 
-            // echo 'Paciente: ';
-            // print_r($docPaciente);
-            // echo "\n<br />\n<br />Prontuario: ";
-            // print_r($docProntuario);
-
             $collectionConsulta = $this->conexao->querySync('SELECT * FROM "consulta" WHERE "cpf_paciente" = :cpf_paciente', ['cpf_paciente' => $this->cpf], null, ['names_for_values' => true]);
 
             $consulta = (array)$collectionConsulta->fetchAll();
-            // echo "\n<br />\n<br />Consulta: ";
-            // print_r(($consulta));
 
             $qtd = count($consulta);
 
             for ($i = 0; $i < $qtd; $i++) {
                 $docConsulta[$i] = $consulta[$i];
-                // echo "\n<br />\n<br />Consulta ";
-                // print_r($i);
-                // echo ':';
-                // print_r($docConsulta[$i]);
+
                 $id_consulta = $docConsulta[$i]['id_consulta'];
-                // echo "\n<br />\n<br />ID consulta: ";
-                // print_r($id_consulta);
+
                 $collectionReceita = $this->conexao->querySync('SELECT * FROM "receita" WHERE "id_consulta" = :id_consulta ', ['id_consulta' => $id_consulta], null, ['names_for_values' => true]);
                 $receita = (array)$collectionReceita->fetchAll();
                 $docReceita[$i] = $receita[0];
-                // echo "\n<br />\n<br />Receita: ";
-                // print_r($docReceita[$i]);
             }
-
-            // echo "\n<br />\n<br />Doc Receita: ";
-            // print_r($docReceita);
 
             $doc[0] = $docPaciente[0];
             $doc[1] = $docProntuario[0];
@@ -83,9 +62,6 @@ class Serviços_pesquisa
             $doc[3] = $docReceita;
             $doc[4] = $qtd; //quantidade de consultas registradas
 
-            // echo "passou aqui 1";
-            // echo "\n<br />\n<br />Doc: ";
-            // print_r($doc);
             return $doc;
         }
     }

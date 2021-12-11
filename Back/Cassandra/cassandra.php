@@ -8,7 +8,6 @@ class Cassandra
 {
     public static function getConnection()
     {
-        // echo "conexão";
         return  new Connection(['localhost'], 'medon');
     }
 }

@@ -24,8 +24,6 @@ class Serviços_usuario
 
     public function inserirUsuario()
     {
-        // $DateTime = DateTime::createFromFormat('d-m-Y', $this->data_nascimento);
-        // $newDate = $DateTime->format('Y-m-d');
         $usuario = [
             'nome' => $this->nome,
             'crm' => $this->crm,
@@ -33,7 +31,6 @@ class Serviços_usuario
             'senha' => $this->senha
         ];
 
-        // SELECT * FROM medon.usuario WHERE "crm" = '456123';
         $collection = $this->conexao->querySync('SELECT * FROM "usuario" WHERE "crm" = :crm ', ['crm' => $this->crm], null, ['names_for_values' => true]);
         $qtd = count((array)$collection->fetchAll());
 
@@ -57,8 +54,6 @@ class Serviços_usuario
         $collection = $this->conexao->querySync('SELECT * FROM "usuario" WHERE "crm" = :crm ', ['crm' => $this->crm], null, ['names_for_values' => true]);
         $usuario = (array)$collection->fetchAll();
         $qtd = count($usuario);
-
-        // print_r($usuario);
 
         if ($qtd == 1) {
             if ($usuario[0]['senha'] != $this->senha) {
