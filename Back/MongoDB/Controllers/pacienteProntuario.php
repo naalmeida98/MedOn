@@ -22,8 +22,5 @@
         $servico_pacienteProntuario->inserirPacienteProntuario();
         
         
-    }elseif($acao == ''){
-        
-        
     }
 ?>

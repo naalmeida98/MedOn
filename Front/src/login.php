@@ -36,7 +36,7 @@ if (!isset($_SESSION)) {
                 </div>
                 <div class="full-box">
                     <label class="required" for="name">Senha</label>
-                    <input type="text" name="senha" id="senha" placeholder="Digite sua senha">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
                 </div>
                 <div class="required" style="padding-left:10px;"> Itens obrigatórios</div>
                 <div class="full">

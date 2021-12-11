@@ -45,14 +45,7 @@ class Serviços_pesquisa{
             $docPaciente = $collectionPaciente->findOne(['cpf' => $this->cpf]);
             $docProntuario = $collectionProntuario->findOne(['cpf_paciente' => $this->cpf]);
 
-			// print_r($docPaciente);
-			// print_r($docProntuario);
-
 			$qtd = $collectionConsulta->count(['cpf_paciente' => $this->cpf]);
-			// $docConsulta = $collectionConsulta->find(['cpf_paciente' => $this->cpf]);
-			// print_r($docConsulta);
-			
-			// $cit = new CachingIterator($docConsulta);
 
 			$docConsulta = $collectionConsulta->find(['cpf_paciente' => $this->cpf]);
 			$consulta=array();
@@ -65,7 +58,6 @@ class Serviços_pesquisa{
 				$i++;
 			}
 
-			//print_r($consulta);
 			
 			$doc[0] = $docPaciente;
 			$doc[1] = $docProntuario;

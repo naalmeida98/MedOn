@@ -5,14 +5,14 @@ if (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 1) {
     require_once '../Controllers/pesquisa.php';
     if ($doc != null) {
         $doc_completo = $doc_completo = isset($doc) ? $doc : $doc;
-        // print_r($doc_completo);
+        
     }
 } elseif (isset($_GET['pesquisar']) && $_GET['pesquisar'] == 2) {
     $acao = 'pesquisar2';
     require_once '../Controllers/pesquisa.php';
     if ($doc != null) {
         $doc_completo = $doc_completo = isset($doc) ? $doc : $doc;
-        // print_r($doc_completo);
+        
     }
 }
 
